@@ -3,7 +3,7 @@
 header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-image: linear-gradient(
         rgba(255, 165, 0) 0%,
@@ -23,6 +23,6 @@ header {
 }
 
 .search-area {
-    width: 30vw;
+    width: 20vw;
     margin-right: 15px;
 }
