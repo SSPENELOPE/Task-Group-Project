@@ -17,6 +17,7 @@ var searchEventbutton = function () {
         alert(response.statustext)
         } else {
             return response.json().then(function(data) {
+                // Console loging the returned data so we can see what we need to get
                 console.log(data);
             });
         }
