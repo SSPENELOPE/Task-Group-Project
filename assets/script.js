@@ -1,0 +1,1 @@
+var searchBtn = document.getElementById("search");
