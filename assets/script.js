@@ -3,7 +3,7 @@
 var searchInput = $("#default-search");
 
 /*                  Functions                    */
-
+// Function to grab data based on user keyword input
 var searchEventbutton = function () {
     var userInput = searchInput.val();
     var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword="+userInput+"&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
@@ -29,4 +29,5 @@ var searchEventbutton = function () {
 
 
 /*               Event Listeners              */
+// Search button next to input box on header
 $("#search-btn").click(searchEventbutton);
