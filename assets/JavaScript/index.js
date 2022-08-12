@@ -1,6 +1,8 @@
 /*               Variables               */
-/* var searchBtn = $("#search-btn") */
 var searchInput = $("#default-search");
+var rapBtn = $("#rap");
+var countryBtn = $("#country");
+var rockBtn = $("#rock");
 
 /*                  Functions                    */
 // Function to grab data based on user keyword input
@@ -27,6 +29,12 @@ var searchEventbutton = function () {
         alert(error);
     });
 };
+
+/* var searchMusicGenre = function () {
+    if (rapBtn) {
+        var musicGenre = ""
+    }
+} */
 
 
 /*               Event Listeners              */
