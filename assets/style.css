@@ -2,8 +2,8 @@
 
 header {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-image: linear-gradient(
         rgba(255, 165, 0) 0%,
@@ -13,6 +13,15 @@ header {
     width: 100vw;;
     color: red;
     text-decoration: overline;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2em;
+    border: 3px solid limegreen;
 }
 
 .page-name {
