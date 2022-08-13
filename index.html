@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="./assets/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
@@ -14,134 +14,66 @@
 </head>
 
 <body>
+<!--background video-->
+
+  <video class="video-1"playsinline autoplay muted loop>
+    <source src="./assets/css/live background/Live.mp4" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
 
   <!--Header-->
   <header>
+      <!--Webpage Title-->
     <div class="container">
-      <div class="page-name"><i class="fa-solid fa-champagne-glasses"></i>HEADONESS HEAVEN<i class="fa-solid fa-champagne-glasses"></i></div>
+      <div class="page-name"><i class="fa-solid fa-champagne-glasses"></i>HEDONIST HEAVEN<i
+          class="fa-solid fa-champagne-glasses"></i></div>
+    </div><br>
+      <!--Search Area-->
+    <div class="container-1">
       <div class="search-area">
-        <form>   
-          <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+        <form>
+          <label for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
           <div class="relative">
-              <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-                  <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-              </div>
-              <input type="search" id="default-search" class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search For your event here" required>
-              <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="search-btn">Search</button>
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <input type="search" id="default-search"
+              class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Find Events" required>
+            <button type="submit"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              id="search-btn">Search</button>
           </div>
         </form>
       </div>
-    </div><br>
-    <div class="container">
-    <nav class="bg-gray-50 dark:bg-gray-700">
-      <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
+        <!--Navbar-->
+      <nav>
+        <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
           <div class="flex items-center">
-              <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
-                  <li>
-                      <a href="#" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
-                  </li>
-                  <li>
-                      <a href="#" class="text-gray-900 dark:text-white hover:underline">Company</a>
-                  </li>
-                  <li>
-                      <a href="#" class="text-gray-900 dark:text-white hover:underline">Team</a>
-                  </li>
-                  <li>
-                      <a href="#" class="text-gray-900 dark:text-white hover:underline">Features</a>
-                  </li>
-              </ul>
+            <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+              <li>
+                <a href="#" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-900 dark:text-white hover:underline">Company</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-900 dark:text-white hover:underline">Team</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-900 dark:text-white hover:underline">Features</a>
+              </li>
+            </ul>
           </div>
-      </div>
-  </nav>
-  </div>
-  </header>
-
-
-  <!--Sidebar--> 
-  <!--Added space between icons and genre names AJ-->
-  <aside class="w-72 h-80" aria-label="Sidebar">
-    <div class="overflow-y-auto py-4 px-3 bg-gray-50 dark:bg-gray-800">
-      <!--Search by Music Genre-->
-      <h1 class="text-center p-5 text-white">FIND YOUR EVENT HERE</h1>
-      <ul class="space-y-5">
-        <li class="border-b border-gray-200 dark:border-gray-700">
-          <a href="#"
-            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span class="flex-1 ml-3 whitespace-nowrap text-center">Music</span>
-          </a>
-        </li>
-        <!--Rap Button-->
-        <li>
-          <button
-            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span class="flex-1 ml-3 whitespace-nowrap" id="rap"><i
-                class="fa-solid fa-headphones"></i> Rap/Hip-hop</span>
-          </button>
-        </li>
-        <!--Rock Button-->
-        <li> 
-          <button
-            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span class="flex-1 ml-3 whitespace-nowrap" id="rock"><i class="fa-solid fa-drum"></i> Rock</span>
-          </button>
-        </li>
-        <!--Country Button-->
-        <li>
-          <button
-            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-            <span class="flex-1 ml-3 whitespace-nowrap" id="country"><i class="fa-solid fa-guitar"></i> Country</span>
-          </button>
-        </li>
-      </ul>
-
-      <!--Sporting Events Dropown-->
-      <!--Added space between icons and genre names AJ-->
-      <ul class="pt-4 mt-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
-        <li>
-          <button type="button"
-            class="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-            aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
-            <svg aria-hidden="true"
-              class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
-              fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"></svg>
-            <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Sporting Event's</span>
-            <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
-            </svg>
-          </button>
-          <ul id="dropdown-example" class="hidden py-2 space-y-2">
-            <!--Football Button-->
-            <li>
-              <button id="football"
-                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><i
-                  class="fa-solid fa-football"></i> Football</button>
-            </li>
-            <!--Basketball Button-->
-            <li>
-              <button id="basketball"
-                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><i
-                  class="fa-solid fa-basketball"></i>Basketball</button>
-            </li>
-            <!--Soccer Button-->
-            <li>
-              <button id="soccer"
-                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><i
-                  class="fa-solid fa-futbol"></i> Soccer</button>
-            </li>
-            <!--Baseball Button-->
-            <li>
-              <button id="baseball"
-                class="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"><i
-                  class="fa-solid fa-baseball"></i> Baseball</button>
-            </li>
-          </ul>
-        </li>
-      </ul>
+        </div>
+      </nav>
     </div>
-  </aside>
+  </header>
 
   <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
