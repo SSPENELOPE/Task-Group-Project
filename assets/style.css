@@ -26,3 +26,26 @@ header {
     width: 30vw;
     margin-right: 15px;
 }
+
+.container {
+    display: right;
+}
+/* the starting of the css for the card designs*/
+.card {
+    background: gray;
+    width: 270px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-right: 100px;
+    box-shadow: 0 0 3px;
+    
+}
+
+.card-image {
+    background-color: aqua;
+    height:150px;
+    margin-bottom: 15px;
+    background-size: cover;
+}
+
