@@ -81,12 +81,26 @@ nav ul li{
 .results-card {
     display: flex;
     height: 20vh;
-    min-width: 25vw;
+    min-width: 400px;
     align-items: flex-start;
     text-decoration: none;
     border: 3px solid yellow;
+    background-color: rgb(72, 72, 72);
     margin: .5em;
-    align-items: flex-end;
-    justify-content: flex-end;
+    border-radius: .6em;
+}
+
+.card-title {
+    margin: 0 auto;
+    color: #fff;
+    font-size: 35px;
+}
+
+.date-time {
+    align-self: flex-end;
+}
+
+.website-link {
+    align-self: flex-end;
 }
 
