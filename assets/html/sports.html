@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="../css/sports.css" />
+  <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <title>Hedonist Heaven</title>
+</head>
+
+<body>
+  <!--background video-->
+
+  <video class="video-1" playsinline autoplay muted loop>
+    <source src="./assets/css/live background/Live.mp4" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
+
+  <!--Header-->
+  <header>
+    <!--Webpage Title-->
+    <div class="container">
+      <div class="page-name"><i class="fa-solid fa-champagne-glasses"></i>HEDONIST HEAVEN<i
+          class="fa-solid fa-champagne-glasses"></i></div>
+    </div><br>
+    <!--Search Area-->
+    <div class="container-1">
+      <div class="search-area">
+        <form>
+          <label for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+          <div class="relative">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <input type="search" id="default-search"
+              class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Find Events" required>
+            <button type="submit"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              id="search-btn">Search</button>
+          </div>
+        </form>
+      </div>
+      <!--Navbar-->
+      <nav>
+        <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
+          <div class="flex items-center">
+            <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
+              <li>
+                <a href="../../index.html" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="./sports.html" class="text-gray-900 dark:text-white hover:underline">Sporting
+                  Events</a>
+              </li>
+              <li>
+                <a href="./concerts.html" class="text-gray-900 dark:text-white hover:underline">Concerts</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="/assets/JavaScript/sports.js"></script>
+</body>
+
+</html>

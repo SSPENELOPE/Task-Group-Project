@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(rgba(255, 165, 0) 0%,
+            rgba(204, 33, 36, 0.6) 100%);
+    color: lime;
+    text-decoration: overline;
+    border: 3px solid lime;
+    height: 20vh;
+    font-family: rubik-dirt;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+nav ul li{
+    background-color: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font-weight: 900;
+    font-size: 25px;
+    font-family: monospace;
+}
+
+.search-area {
+    width: 25%;
+    margin-right: 0%;
+}
+
+.video-1 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -9999;
+}
