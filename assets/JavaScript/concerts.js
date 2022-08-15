@@ -15,7 +15,7 @@ var searchByGenre = function () {
     } else {
     var apiUrl =  "https://app.ticketmaster.com/discovery/v2/events.json?&genreId=KnvZfZ7vAeA&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     };
-    
+
     fetch(apiUrl, {
         method: "get",
     }
@@ -27,6 +27,7 @@ var searchByGenre = function () {
             return response.json().then(function(data) {
                 // Console loging the returned data so we can see what we need to get
                 console.log(data);
+                displayGenreResults(data);
             });
         }
     })
@@ -35,6 +36,20 @@ var searchByGenre = function () {
         alert(error);
     });
 };
+
+function displayGenreResults(data) {
+    var resultsContainer = $(".results-container");
+    for (var i = 0; i < data.length; i++) {
+        var resultsCard = $("<div>");
+        resultsCard.addClass("results-card")
+        var eventTitle = $("<h4>");
+        eventTitle.textContent = data[i]._embedded.events[i].name;
+        eventTitle.addClass("card-title");
+        resultsCard.append($eventTitle);
+        resultsContainer.append($resultsCard);
+
+    }
+}
 
 
 // Event Listener for genre select menu
