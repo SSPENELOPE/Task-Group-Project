@@ -54,3 +54,31 @@ nav ul li {
   min-height: 100%;
   z-index: -9999;
 }
+
+/* Still a work in progress, just wanted to get something displayed on the page.  */
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 20vh;
+  width: 15vw;
+  border: 3px solid limegreen !important;
+}
+
+#cards h4 {
+  display: flex;
+  height: 20vh;
+  min-width: 400px;
+  align-items: flex-start;
+  text-decoration: none;
+  border: 3px solid yellow;
+  background-color: rgb(72, 72, 72);
+  margin: 0.5em;
+  border-radius: 0.6em;
+  font-size: 32px;
+  color: white;
+}
