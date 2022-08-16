@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="../css/concerts.css" />
-    <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -18,7 +17,7 @@
     <video class="video-1" playsinline autoplay muted loop>
         <source src="../css/css-backgrounds/concert-background.mp4" type="video/webm">
         Your browser does not support the video tag.
-      </video>
+    </video>
 
     <!--Header-->
     <header>
@@ -60,8 +59,8 @@
                                     aria-current="page">Home</a>
                             </li>
                             <li>
-                                <a href="./sports.html"
-                                    class="text-gray-900 dark:text-white hover:underline">Sporting Events</a>
+                                <a href="./sports.html" class="text-gray-900 dark:text-white hover:underline">Sporting
+                                    Events</a>
                             </li>
                             <li>
                                 <a href="./concerts.html"
@@ -74,52 +73,139 @@
         </div>
     </header>
 
-   <!--Sports Search Section-->
-   <sectction class="wrapper">
-    <form>
-        <div class="flex m-6">
-            <select id="small" class="block p-2.5 mb-6 w-72 text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected>Choose a genre</option>
-                <option><i class="fa-solid fa-headphones"></i>Rap/Hiphop</option>
-                <option><i class="fa-solid fa-drum"></i>Rock</option>
-                <option><i class="fa-solid fa-guitar"></i>Country</option>
-                <option><i class="fa-solid fa-compact-disc"></i>Alternative</option>
-              </select>
-           
-            <div class="relative w-full">
-                <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search for an artist or event" required>
-                <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <span class="sr-only">Search</span>
-                </button>
+    <!--Sports Search Section-->
+    <sectction class="wrapper">
+        <form>
+            <div class="flex m-6">
+                <select id="small"
+                    class="block p-2.5 mb-6 w-72 text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option selected>Choose a genre</option>
+                    <option><i class="fa-solid fa-headphones"></i>Rap/Hiphop</option>
+                    <option><i class="fa-solid fa-drum"></i>Rock</option>
+                    <option><i class="fa-solid fa-guitar"></i>Country</option>
+                    <option><i class="fa-solid fa-compact-disc"></i>Alternative</option>
+                </select>
+
+                <div class="relative w-full">
+                    <input type="search" id="search-dropdown"
+                        class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-l-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
+                        placeholder="Search for an artist or event" required>
+                    <button type="submit"
+                        class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </sectction>
+
+    <!--Music Results Cards-->
+    <seciton class="music-results">
+        <div class="results-container" id="container-id">
+            <div class="results-card">
+                <div class="title-div">
+                    <h2 class="card-title">TITLE</h2>
+                </div>
+                <div class="venue-name">
+                    <h4 class="venue-text">Venue</h4>
+                </div>
+                <div class="details-div">
+                    <h4 class="date-time">Start time/Date</h4>
+                    <a class="website-link" target="_blank">Website-link</a>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <div class="title-div">
+                    <h2 class="card-title">TITLE</h2>
+                </div>
+                <div class="venue-name">
+                    <h4 class="venue-text">Venue</h4>
+                </div>
+                <div class="details-div">
+                    <h4 class="date-time">Start time/Date</h4>
+                    <a class="website-link" target="_blank">Website-link</a>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <div class="title-div">
+                    <h2 class="card-title">TITLE</h2>
+                </div>
+                <div class="venue-name">
+                    <h4 class="venue-text">Venue</h4>
+                </div>
+                <div class="details-div">
+                    <h4 class="date-time">Start time/Date</h4>
+                    <a class="website-link" target="_blank">Website-link</a>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <div class="title-div">
+                    <h2 class="card-title">TITLE</h2>
+                </div>
+                <div class="venue-name">
+                    <h4 class="venue-text">Venue</h4>
+                </div>
+                <div class="details-div">
+                    <h4 class="date-time">Start time/Date</h4>
+                    <a class="website-link" target="_blank">Website-link</a>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <div class="title-div">
+                    <h2 class="card-title">TITLE</h2>
+                </div>
+                <div class="venue-name">
+                    <h4 class="venue-text">Venue</h4>
+                </div>
+                <div class="details-div">
+                    <h4 class="date-time">Start time/Date</h4>
+                    <a class="website-link" target="_blank">Website-link</a>
+                </div>
+            </div>
+
+            <div class="results-card">
+                <div class="title-div">
+                    <h2 class="card-title">TITLE</h2>
+                </div>
+                <div class="venue-name">
+                    <h4 class="venue-text">Venue</h4>
+                </div>
+                <div class="details-div">
+                    <h4 class="date-time">Start time/Date</h4>
+                    <a class="website-link" target="_blank">Website-link</a>
+                </div>
             </div>
         </div>
-    </form>
-   </sectction>
 
-   <seciton class="music-results">
-    <div class="results-container">
-      <div class="results-card">
-            <h4 class="date-time">Start time/Date</h4>
-            <h2 class="card-title">TITLE</h2>
-            <h4 class="website-link">Website-link</h4>
-        </div>
-        <div class="results-card">
-            
-        </div>
-        <div class="results-card">
-           
-        </div>
-        <div class="results-card">
-           
+
+        <div class="next-prev">
+            <!-- Previous Button -->
+            <button id="music-prev"
+                class="h-10 w-20 mr-6 inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                Previous
+            </button>
+
+            <!-- Next Button -->
+            <button id="music-next"
+                class="h-10 w-20 inline-flex items-center py-2 px-4 ml-6 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                Next
+            </button>
         </div>
 
-    </div>
-   </seciton>
+    
+    </seciton>
 
     <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="../JavaScript/concerts.js"></script>
 </body>
 
