@@ -7,13 +7,13 @@ var resultsContainer = document.getElementById("container-id");
 var searchByGenre = function () {
     var selectedValue = $("#small").val();
     if (selectedValue == "Rap/Hiphop") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&genreId=KnvZfZ7vAv1&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=6genreId=KnvZfZ7vAv1&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     } else if (selectedValue == "Alternative") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&genreId=KnvZfZ7vAvv&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&genreId=KnvZfZ7vAvv&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else if (selectedValue == "Country") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&genreId=KnvZfZ7vAv6&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&genreId=KnvZfZ7vAv6&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?per-page=6&genreId=KnvZfZ7vAeA&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&genreId=KnvZfZ7vAeA&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     };
 
     fetch(apiUrl, {
