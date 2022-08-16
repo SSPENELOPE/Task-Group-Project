@@ -80,20 +80,23 @@ nav ul li{
 
 .results-card {
     display: flex;
+    flex-wrap: wrap;
     height: 20vh;
-    min-width: 400px;
+    min-width: 450px;
+    max-width: 500px;
     align-items: flex-start;
     text-decoration: none;
     border: 3px solid yellow;
     background-color: rgb(72, 72, 72);
     margin: .5em;
     border-radius: .6em;
+    background-size: 100;
 }
 
 .card-title {
     margin: 0 auto;
-    color: #fff;
-    font-size: 35px;
+    color: rgb(8, 185, 14);
+    font-size: 15px;
 }
 
 .date-time {
