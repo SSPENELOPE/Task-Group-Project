@@ -15,7 +15,7 @@ var searchEventButton = function () {
             } else {
                 return response.json().then(function(data) {
                     console.log(data);
-                    displayResults(data)
+                    displayResults(data);
                 })
             }
         })
@@ -28,35 +28,25 @@ var searchEventButton = function () {
 
 // The below code is a work in progress displaying cards on the homescreen for specified events
 
-// var displayCards = document.querySelector("#cards")
+// below code has been updated to return the name of querried results on the index.html page. Still needs work 
 
-// var displayResults = function (data) {
-//     //CODE TO DISPLAY RESULTS HERE
-//     var eventData = data._embedded.events
-//     displayCards.append(eventData)
-//     displayCards.innerHTML = eventData
-//     var results = data._embedded.events[i]
-//     for (var i = 0; i < results; i++) {
-//         displayCards.addClass("results")
-//         var eventTitle = displayCards.append("h4")
-//         eventTitle.innerHTML = eventData[i].name
-//         eventTitle.addClass("title");
-//         displayCards.append(eventTitle);
-//         displayCards.append(resultsCard);
-//     }
-//     console.log(eventData[i].name)
+var displayCards = document.querySelector("#cards")
 
-// }
+var displayResults = function (data) {
+    //CODE TO DISPLAY RESULTS HERE
+    var eventData = data._embedded.events
+    console.log(eventData)
+    
+    var results = data._embedded.events.length
+    for (var i = 0; i < results; i++) {
+        var element = document.createElement("h4")
+        displayCards.append(element)
+        element.append(eventData[i].name)
+        console.log(eventData[i].name)
+    }
+}
 
-// var resultsContainer = $(".results-container");
-//     for (var i = 0; i < data.length; i++) {
-//         var resultsCard = $("<div>");
-//         resultsCard.addClass("results-card")
-//         var eventTitle = $("<h4>");
-//         eventTitle.textContent = data[i]._embedded.events[i].name;
-//         eventTitle.addClass("card-title");
-//         resultsCard.append($eventTitle);
-//         resultsContainer.append($resultsCard);
+
 
 
 /*               Event Listeners              */
