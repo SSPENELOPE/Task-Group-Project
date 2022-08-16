@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
 
+
 header {
     display: flex;
     flex-direction: column;
@@ -12,6 +13,15 @@ header {
     height: 20vh;
     font-family: rubik-dirt;
     font-size: 30px;
+}
+
+.video-1 {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -9999;
 }
 
 .container {
@@ -51,4 +61,39 @@ nav ul li{
     min-width: 100%;
     min-height: 100%;
     z-index: -9999;
+}
+
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+.results-card {
+    display: flex;
+    height: 20vh;
+    min-width: 400px;
+    align-items: flex-start;
+    text-decoration: none;
+    border: 3px solid greenyellow;
+    background-color: rgb(72, 72, 72);
+    margin: .5em;
+    border-radius: .6em;
+}
+
+.card-title {
+    margin: 0 auto;
+    color: whitesmoke;
+    font-size: 35xp;
+}
+
+.date-time {
+    align-self: flex-end;
+    color: whitesmoke;
+}
+
+.website-link {
+    align-self: flex-end;
+    color: whitesmoke;
 }

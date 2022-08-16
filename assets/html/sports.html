@@ -10,15 +10,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-  <title>Hedonist Heaven</title>
+  <title>Hedonist Heaven // Sports</title>
 </head>
 
 <body>
   <!--background video-->
-
-  <video class="video-1" playsinline autoplay muted loop>
-    <source src="./assets/css/live background/Live.mp4" type="video/webm">
-    Your browser does not support the video tag.
+  <video id="background-video" posters="posters.JPG" auto loop muted>
+  <source src="image.png" tyoe="video/mp4">
   </video>
 
   <!--Header-->
@@ -72,6 +70,51 @@
       </nav>
     </div>
   </header>
+
+  <!--Sports Search Section-->
+  <section class="wrapper">
+    <form>
+      <div class="flex m-6">
+        <select id="small" class="block p-2.5 mb-6 w-72 text-gray-900 bg-gray-50 border border-gray-300  ">
+          <option selected>Choose A Sport</option>
+          <option><i class="fa-solid fa-football"></i>Football</option>
+          <option><i class="fa-solid fa-bat"></i>Baseball</option>
+          <option><i class="fa-solid fa-basketball">Basketball</i></option>
+          <option><i class="fa-solid fa-soccer-ball">Soccer</i></option>
+          <option><i class="fa-solid fa-hockey-stick"></i>Hockey</option>
+        </select>
+
+        <div class="relative w-full">
+          <input type="search" id="search-dropdown" class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-r-lg border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-l-gray-700 dark:border-gray-600 dark:palceholder-gray-400 dark:text-white dark:focus:border-blue-500" placeholder="Search for a game" required>
+          <button type="submit" class="absolute top-0 right-0 p-2.5 text-sm font-medium text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="..." ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            <span class="sr-only">Search</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!--Sports page cards-->
+  <section class="sports-results">
+    <div class="results-container">
+      <div class="results-card">
+        <h4 class="date-time">Start time/Date</h4>
+        <h2 class="card-title"> TITLE</h2>
+        <h4 class="website-link">Website-link</h4>
+      </div>
+      <div class="results-card">
+        <h4 class="date-time">Start time/Date</h4>
+        <h2 class="card-title"> TITLE</h2>
+        <h4 class="website-link">Website-link</h4>
+      </div>
+      <div class="results-card">
+        <h4 class="date-time">Start time/Date</h4>
+        <h2 class="card-title"> TITLE</h2>
+        <h4 class="website-link">Website-link</h4>
+      </div>
+    </div>
+  </section>
 
   <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
