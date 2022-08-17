@@ -15,6 +15,7 @@ var searchEventButton = function () {
             } else {
                 return response.json().then(function(data) {
                     console.log(data);
+                    displayResults(data);
                 })
             }
         })
@@ -25,10 +26,27 @@ var searchEventButton = function () {
 };
 
 
+// The below code is a work in progress displaying cards on the homescreen for specified events
 
-var displayResults = function () {
+// below code has been updated to return the name of querried results on the index.html page. Still needs work 
+
+var displayCards = document.querySelector("#cards")
+
+var displayResults = function (data) {
     //CODE TO DISPLAY RESULTS HERE
+    var eventData = data._embedded.events
+    console.log(eventData)
+    
+    var results = data._embedded.events.length
+    for (var i = 0; i < results; i++) {
+        var element = document.createElement("h4")
+        displayCards.append(element)
+        element.append(eventData[i].name)
+        console.log(eventData[i].name)
+    }
 }
+
+
 
 
 /*               Event Listeners              */
