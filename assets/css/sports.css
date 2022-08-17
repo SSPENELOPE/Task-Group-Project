@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
 
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -9999;
+}
 
 header {
     display: flex;
@@ -13,15 +25,6 @@ header {
     height: 20vh;
     font-family: rubik-dirt;
     font-size: 30px;
-}
-
-.video-1 {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -9999;
 }
 
 .container {
@@ -52,15 +55,6 @@ nav ul li{
 .search-area {
     width: 25%;
     margin-right: 0%;
-}
-
-.video-1 {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -9999;
 }
 
 .results-container {
