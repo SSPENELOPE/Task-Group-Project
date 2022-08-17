@@ -53,6 +53,10 @@ function displayGenreResults(data) {
     var events = data._embedded.events;
     console.log(events);
 
+    if (resultsContainer.style.display == "none") {
+        resultsContainer.style.display = "flex";
+    } 
+
     for (var i = 0; i < events.length; i++) {
         var concertDate = events[i].dates.start.dateTime;
         var concertReadableDate = new Date(concertDate);
@@ -61,7 +65,7 @@ function displayGenreResults(data) {
         concertLink[i].textContent = "Purchase Tickets Now";
         concertLink[i].href = events[i].url;
         venue[i].textContent = events[i]._embedded.venues[0].city.name + "," + " " + events[i]._embedded.venues[0].state.name;
-        musicCardResults[i].setAttribute("style", "background: url(" + events[i].images[1].url + ")");
+        musicCardResults[i].setAttribute("style", "background: url(" + events[i].images[1].url + ");");
     }
 
 };
