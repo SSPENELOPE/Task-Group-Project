@@ -20,7 +20,6 @@ header {
     background-image: linear-gradient(rgba(255, 165, 0) 0%,
             rgba(204, 33, 36, 0.6) 100%);
     color: lime;
-    text-decoration: overline;
     height: 20vh;
     font-family: rubik-dirt;
     font-size: 30px;
@@ -33,6 +32,7 @@ header {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: baseline;
+    text-decoration: overline;
 }
 
 .container-1 {
@@ -55,7 +55,7 @@ nav ul li{
 
 .search-area {
     width: 25%;
-    margin-right: 0%;
+    margin-left: 3em;
 }
 
 
@@ -70,7 +70,7 @@ nav ul li{
     margin-right: auto;
     height: 80vh;
     width: 50vw;
-    border: 3px solid limegreen !important;
+   /*  border: 3px solid limegreen !important; */
 }
 
 .results-container {
@@ -90,7 +90,7 @@ nav ul li{
     min-width: 400px;
     max-width: 400px;
     text-decoration: none;
-    border: 3px solid yellow;
+   /*  border: 3px solid yellow; */
     background-color: rgb(72, 72, 72);
     margin: .5em;
     border-radius: .6em;
@@ -107,7 +107,8 @@ nav ul li{
 
 .venue-text {
     margin: 0 auto;
-    color: purple;
+ /*    color: purple; */
+    color: limegreen;
     text-shadow: 0.1px 0.2px 0.2px black;
     font-size: 15px;
     font-weight: 900;
@@ -124,7 +125,8 @@ nav ul li{
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
-    color: rgba(255, 165, 0);
+    /* color: rgba(255, 165, 0); */
+    color: limegreen;
     border-radius: .6em;
     margin: 0 6px;
 }
