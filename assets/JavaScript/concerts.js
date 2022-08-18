@@ -21,7 +21,10 @@ var brewerySearch = document.getElementById("brewery-search");
 var breweryName = document.querySelectorAll(".brewery-name");
 var breweryAddress = document.querySelectorAll(".brewery-address");
 var breweryUrl = document.querySelectorAll(".brewery-url");
-var breweryResults = document.querySelector(".brewery-results")
+var breweryResults = document.querySelector(".brewery-results");
+var brewPage = "1";
+var brewNextBtn = document.getElementById("brew-next");
+var brewPrevBtn = document.getElementById("brew-prev");
 
 
 /*      fucntions       */
@@ -66,9 +69,11 @@ function searchByInputAndGenre(e) {
         var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAvv&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else if (selectedValue == "Country" && musicInput) {
         var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAv6&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
-    } else {
+    } else if (selectedValue == "Alternative" && musicInput) {
         var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAeA&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
-    };
+    } else {
+            var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&classificationName=music&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+    }
 
     fetch(apiUrl)
         .then((function (response) {
@@ -115,7 +120,7 @@ function displayGenreResults(data) {
 
 // Concert Pagination Next Page
 var nextPage = function (event) {
-    event.preventDefault()
+    event.preventDefault();
     if (page >= 0) {
         page++;
         console.log(page);
@@ -136,7 +141,7 @@ var prevPage = function () {
 // Get brewery API function
 var getbrewery = function () {
     var breweryCity = breweryInput.value;
-    var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&per_page=3";
+    var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&per_page=3&page="+brewPage;
 
     fetch(breweryApi, {
         method: "GET",
@@ -166,8 +171,27 @@ function displayBreweryResluts(brewData) {
     };
 }
 
+// Brewery Pagination Next function 
+var brewNext = function (e) {
+    e.preventDefault();
+    if (brewPage >= 1) {
+        brewPage++;
+        console.log(brewPage);
+        getbrewery();
+    } 
+}
 
-
+// Brewery Pagination Previous function
+var brewPrev = function (e) {
+    e.preventDefault();
+    if (brewPage >= 2) {
+        brewPage--;
+        console.log(brewPage);
+        getbrewery();
+    } else {
+        return;
+    }
+}
 
 /*      Event Listeners       */
 // Event Listener for genre select menu
@@ -177,6 +201,10 @@ $("#small").on("change", function() {
 
 // Event Listener for brewery search
 brewerySearch.addEventListener("click", getbrewery);
+
+// Event Listeners for brewery pagination buttons
+brewNextBtn.addEventListener("click", brewNext);
+brewPrevBtn.addEventListener("click", brewPrev);
 
 // Event Listener for search button
 userSearch.addEventListener("click", searchByInputAndGenre);
