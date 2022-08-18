@@ -13,12 +13,6 @@
 </head>
 
 <body>
-    <!--Page background Video-->
-    <video class="video-1" playsinline autoplay muted loop>
-        <source src="../css/css-backgrounds/Live.mp4" type="video/webm">
-        Your browser does not support the video tag.
-    </video>
-
     <!--Header-->
     <header>
         <!--Webpage Title-->
@@ -55,7 +49,11 @@
         </div>
     </header>
 
-
+    <!--Page background Video-->
+    <video class="video-20" playsinline autoplay muted loop>
+        <source src="../css/css-backgrounds/Live.mp4" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
 
     <!--Genre Search Section-->
     <sectction class="wrapper">
@@ -93,10 +91,64 @@
         <!--Brewery-->
         <section class="brewery-wrapper">
             <div class="brew-searchArea">
-            <!--Brewery Header/w Search Area-->
-            <h1 class="bg-gray-500 dark:bg-gray-700">Everythings Better With Beer!</h1>
-            <h2 class="bg-gray-500 dark:bg-gray-700">Find Your Brewery Here!</h2>
+                <!--Brewery Header/w Search Area-->
+                <h1 class="bg-gray-500 dark:bg-gray-700">Everythings Better With Beer!</h1>
+                <h2 class="bg-gray-500 dark:bg-gray-700">Find Your Brewery Here!</h2>
                 <div class="brewery-container">
+                    <!--State Selector Dropdown-->
+                    <select id="states" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option selected>Choose a State</option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Connecticut</option>
+                        <option>Delaware</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Hawaii</option>
+                        <option>Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Maryland</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Oregon</option>
+                        <option>Pennsylvania</option>
+                        <option>Rhode Island</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virginia</option>
+                        <option>Washington</option>
+                        <option>West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option>Wyoming</option>
+                      </select>
+
                     <label for="default-search"
                         class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
                     <div class="relative">
@@ -194,7 +246,7 @@
                         class="h-10 w-20 mr-6 inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                         Previous
                     </button>
-    
+
                     <!-- Next Button -->
                     <button id="brew-next"
                         class="h-10 w-20 inline-flex items-center py-2 px-4 ml-6 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -339,6 +391,7 @@
 
     </main>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="../JavaScript/concerts.js"></script>
