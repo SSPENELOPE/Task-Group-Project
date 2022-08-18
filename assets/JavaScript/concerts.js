@@ -1,7 +1,7 @@
 /*     variables    */
 var resultsContainer = document.getElementById("container-id");
 var page = "0";
-var nextPrev = document.getElementById("next-prev");
+var nextPrev = document.querySelector(".next-prev");
 var musicPrev = document.getElementById("music-prev");
 var musicNext = document.getElementById("music-next");
 var userSearch = document.getElementById("musicSearch-btn");
@@ -20,7 +20,8 @@ var breweryInput = document.getElementById("brewery-input");
 var brewerySearch = document.getElementById("brewery-search");
 var breweryName = document.querySelectorAll(".brewery-name");
 var breweryAddress = document.querySelectorAll(".brewery-address");
-var breweryUrl = document.querySelectorAll(".brewery-url")
+var breweryUrl = document.querySelectorAll(".brewery-url");
+var breweryResults = document.querySelector(".brewery-results")
 
 
 /*      fucntions       */
@@ -90,8 +91,9 @@ function displayGenreResults(data) {
     var events = data._embedded.events;
     console.log(events);
 
-    if (resultsContainer.style.display == "none") {
+    if (resultsContainer.style.display == "none" && nextPrev.style.display == "none") {
         resultsContainer.style.display = "flex";
+        nextPrev.style.display = "flex";
     } 
 
     for (var i = 0; i < events.length; i++) {
@@ -110,9 +112,6 @@ function displayGenreResults(data) {
     }
 
 };
-
-
-
 
 // Concert Pagination Next Page
 var nextPage = function (event) {
@@ -134,9 +133,40 @@ var prevPage = function () {
     }
 }
 
+// Get brewery API function
 var getbrewery = function () {
-    
+    var breweryCity = breweryInput.value;
+    var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&per_page=3";
+
+    fetch(breweryApi, {
+        method: "GET",
+    })
+    .then(function (response) {
+        if (!response.ok) {
+            alert(response.statusText)
+        } else {
+            return response.json().then(function (brewData) {
+                console.log(brewData)
+                displayBreweryResluts(brewData);
+            })
+        }
+    });
+};
+
+// Display the brewery Results function
+function displayBreweryResluts(brewData) {
+    if (breweryResults.style.display == "none") {
+        breweryResults.style.display = "flex";
+    }
+    for (var i = 0; i < brewData.length; i++) {
+        breweryName[i].textContent = brewData[i].name;
+        breweryAddress[i].textContent = brewData[i].street;
+        breweryAddress[i].href = "https://maps.google.com/?q=" + brewData[i].street;
+        breweryUrl[i].href = brewData[i].website_url;
+    };
 }
+
+
 
 
 /*      Event Listeners       */
@@ -144,6 +174,9 @@ var getbrewery = function () {
 $("#small").on("change", function() {
     searchByGenre(page = "0");
 });
+
+// Event Listener for brewery search
+brewerySearch.addEventListener("click", getbrewery);
 
 // Event Listener for search button
 userSearch.addEventListener("click", searchByInputAndGenre);

@@ -77,7 +77,6 @@ nav ul li{
     margin-right: auto;
     height: 100vh;
     width: 50vw;
-    border: 3px solid limegreen !important;
 }
 
 .results-container {
@@ -114,9 +113,8 @@ nav ul li{
 
 .venue-text {
     margin: 0 auto;
- /*    color: purple; */
     color: limegreen;
-    text-shadow: 0.1px 0.2px 0.2px black;
+    text-shadow: 0.2px 0.4px 0.6px black;
     font-size: 15px;
     font-weight: 900;
     border-radius: .6em;
@@ -132,7 +130,6 @@ nav ul li{
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
-    /* color: rgba(255, 165, 0); */
     color: limegreen;
     border-radius: .6em;
     margin: 0 6px;
@@ -146,11 +143,11 @@ nav ul li{
 .next-prev {
     display: flex;
     align-items: flex-end;
+    margin-bottom: 15em;
 }
 
 
 /*    Brewery Section       */
-
 .brewery-wrapper {
     display: flex;
     flex-direction: column;
@@ -176,4 +173,13 @@ nav ul li{
 .brew-img {
     max-height: 215px;
     width: 100vw;
+}
+
+
+/*        Media Queries      */
+
+@media screen and (min-width: 1920px) {
+    .results-card {
+        min-width: 450px;
+    }
 }
