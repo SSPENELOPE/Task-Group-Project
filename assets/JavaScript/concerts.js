@@ -17,16 +17,17 @@ var musicCardResults = document.querySelectorAll(".results-card");
 
 
 /*      fucntions       */
+// Search by Genre Function
 var searchByGenre = function () {
     var selectedValue = $("#small").val();
     if (selectedValue == "Rap/Hiphop") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=6&page=" + page + "&totalPages&genreId=KnvZfZ7vAv1&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=8&page=" + page + "&totalPages&genreId=KnvZfZ7vAv1&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     } else if (selectedValue == "Alternative") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&page=" + page + "&totalPages&genreId=KnvZfZ7vAvv&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&totalPages&genreId=KnvZfZ7vAvv&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else if (selectedValue == "Country") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&page=" + page + "&totalPages&genreId=KnvZfZ7vAv6&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&totalPages&genreId=KnvZfZ7vAv6&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&page=" + page + "&totalPages&genreId=KnvZfZ7vAeA&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&totalPages&genreId=KnvZfZ7vAeA&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     };
 
     fetch(apiUrl, {
@@ -49,6 +50,7 @@ var searchByGenre = function () {
         });
 };
 
+// Display Concert Results Function
 function displayGenreResults(data) {
     var events = data._embedded.events;
     console.log(events);
@@ -70,18 +72,19 @@ function displayGenreResults(data) {
 
 };
 
+// Search by Genre and Input Function
 function searchByInputAndGenre(e) {
     e.preventDefault();
     var selectedValue = $("#small").val();
     var musicInput = userInput.value;
     if (selectedValue == "Rap/Hiphop" && musicInput) {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=6&page=" + page + "&genreId=KnvZfZ7vAv1&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=8&page=" + page + "&genreId=KnvZfZ7vAv1&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     } else if (selectedValue == "Alternative" && musicInput) {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&page=" + page + "&genreId=KnvZfZ7vAvv&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAvv&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else if (selectedValue == "Country" && musicInput) {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&page=" + page + "&genreId=KnvZfZ7vAv6&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAv6&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
     } else {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=6&page=" + page + "&genreId=KnvZfZ7vAeA&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAeA&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     };
 
     fetch(apiUrl)
@@ -101,7 +104,7 @@ function searchByInputAndGenre(e) {
 }
 
 
-
+// Concert Pagination Next Page
 var nextPage = function (event) {
     event.preventDefault()
     if (page >= 0) {
@@ -111,6 +114,7 @@ var nextPage = function (event) {
     }
 }
 
+// Concert Pagination Previous Page
 var prevPage = function () {
     if (page >= 1) {
         page--;
@@ -125,8 +129,9 @@ $("#small").on("change", function() {
     searchByGenre(page = "0");
 });
 
+// Event Listener for search button
 userSearch.addEventListener("click", searchByInputAndGenre);
 
+// Event Listeners for Pagination buttons
 musicNext.addEventListener("click", nextPage);
-
 musicPrev.addEventListener("click", prevPage);
