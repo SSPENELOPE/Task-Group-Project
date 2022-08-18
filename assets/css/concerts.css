@@ -24,9 +24,12 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(255, 165, 0) 0%,
-            rgba(204, 33, 36, 0.6) 100%);
-    color: lime;
+    align-items: stretch;
+    background-color: orange;
+/*     background-image: linear-gradient(rgba(255, 165, 0) 0%,
+            rgba(204, 33, 36, 0.6) 100%) */;
+    
+    color: white;
     height: 20vh;
     font-family: rubik-dirt;
     font-size: 30px;
@@ -35,7 +38,6 @@ header {
 .container {
     display: flex;
     text-align: center;
-    flex: 1 1 100%;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: baseline;
@@ -47,7 +49,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     background-color: transparent;
-    flex: 1 1 100%;
+    align-items: center;
+    margin-left: 1em;
+    margin-bottom: 1em;
 }
 
 nav ul li{
@@ -56,13 +60,17 @@ nav ul li{
     flex-wrap: wrap;
     flex-direction: row;
     font-weight: 900;
-    font-size: 25px;
+    font-size: 30px;
     font-family: monospace;
 }
 
 .search-area {
     width: 25%;
-    margin-left: 3em;
+}
+
+.page-name {
+    display: flex;
+    margin-left: 10em;
 }
 
 
@@ -77,7 +85,6 @@ nav ul li{
     margin-right: auto;
     height: 100vh;
     width: 50vw;
-    border: 3px solid limegreen !important;
 }
 
 .results-container {
@@ -97,7 +104,6 @@ nav ul li{
     min-width: 400px;
     max-width: 400px;
     text-decoration: none;
-    border: 3px solid yellow;
     background-color: rgb(72, 72, 72);
     margin: .5em;
     border-radius: .6em;
@@ -114,9 +120,10 @@ nav ul li{
 
 .venue-text {
     margin: 0 auto;
- /*    color: purple; */
     color: limegreen;
-    text-shadow: 0.1px 0.2px 0.2px black;
+    text-shadow: 0.2px 0.4px 0.6px black;
+    background-color: black;
+    width: 30%;
     font-size: 15px;
     font-weight: 900;
     border-radius: .6em;
@@ -132,7 +139,6 @@ nav ul li{
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
-    /* color: rgba(255, 165, 0); */
     color: limegreen;
     border-radius: .6em;
     margin: 0 6px;
@@ -146,11 +152,11 @@ nav ul li{
 .next-prev {
     display: flex;
     align-items: flex-end;
+    margin-bottom: 15em;
 }
 
 
 /*    Brewery Section       */
-
 .brewery-wrapper {
     display: flex;
     flex-direction: column;
@@ -176,4 +182,39 @@ nav ul li{
 .brew-img {
     max-height: 215px;
     width: 100vw;
+}
+
+.next-prev-brew {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/*        Media Queries      */
+
+@media screen and (min-width: 1920px) {
+    .results-card {
+        min-width: 450px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .container-1,
+    nav ul li {
+        font-size: 12px;
+    }
+
+    .brewery-wrapper h1,
+    .brewery-wrapper h2 {
+        font-size: 15px;
+    }
+
+    .page-name {
+        margin-right: 10em;
+    }
+
+    #brewery-search{
+        font-size: 10px;
+        padding: 5px;
+    }
 }
