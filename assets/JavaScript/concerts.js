@@ -15,6 +15,13 @@ var concertLink = document.querySelectorAll(".website-link");
 var venue = document.querySelectorAll(".venue-text");
 var musicCardResults = document.querySelectorAll(".results-card");
 
+// Brewery Card Variables
+var breweryInput = document.getElementById("brewery-input");
+var brewerySearch = document.getElementById("brewery-search");
+var breweryName = document.querySelectorAll(".brewery-name");
+var breweryAddress = document.querySelectorAll(".brewery-address");
+var breweryUrl = document.querySelectorAll(".brewery-url")
+
 
 /*      fucntions       */
 // Search by Genre Function
@@ -44,32 +51,7 @@ var searchByGenre = function () {
                     displayGenreResults(data);
                 });
             }
-        })
-        .catch(function (error) {
-            alert(error);
         });
-};
-
-// Display Concert Results Function
-function displayGenreResults(data) {
-    var events = data._embedded.events;
-    console.log(events);
-
-    if (resultsContainer.style.display == "none") {
-        resultsContainer.style.display = "flex";
-    } 
-
-    for (var i = 0; i < events.length; i++) {
-        var concertDate = events[i].dates.start.dateTime;
-        var concertReadableDate = new Date(concertDate);
-        concertDateTime[i].textContent = concertReadableDate.toDateString();
-        concertTitle[i].textContent = events[i].name;
-        concertLink[i].textContent = "Purchase Tickets Now";
-        concertLink[i].href = events[i].url;
-        venue[i].textContent = events[i]._embedded.venues[0].city.name + "," + " " + events[i]._embedded.venues[0].state.name;
-        musicCardResults[i].setAttribute("style", "background: url(" + events[i].images[1].url + ");");
-    }
-
 };
 
 // Search by Genre and Input Function
@@ -88,20 +70,48 @@ function searchByInputAndGenre(e) {
     };
 
     fetch(apiUrl)
-        .then(function (response) {
+        .then((function (response) {
             if (!response.ok) {
                 alert(response.statustext)
             } else {
                 return response.json().then(function (data) {
-                    // Console loging the returned data so we can see what we need to get
+                    console.log(data)
+                    if (!data._embedded) {
+                        alert("No Events Found");
+                    }
                     displayGenreResults(data);
                 });
             }
-        })
-        .catch(function () {
-            alert("No Events Found");
-        });
+        }))
 }
+
+// Display Concert Results Function
+function displayGenreResults(data) {
+    var events = data._embedded.events;
+    console.log(events);
+
+    if (resultsContainer.style.display == "none") {
+        resultsContainer.style.display = "flex";
+    } 
+
+    for (var i = 0; i < events.length; i++) {
+        var concertDate = events[i].dates.start.dateTime;
+        var concertReadableDate = new Date(concertDate);
+        concertDateTime[i].textContent = concertReadableDate.toDateString();
+        concertTitle[i].textContent = events[i].name;
+        concertLink[i].textContent = "Purchase Tickets Now";
+        concertLink[i].href = events[i].url;
+        if (!events[i]._embedded.venues[0].city || !events[i]._embedded.venues[0].state) {
+            venue[i].textContent = events[i]._embedded.venues[0].name;
+        } else {
+        venue[i].textContent = events[i]._embedded.venues[0].city.name + "," + " " + events[i]._embedded.venues[0].state.name;
+        }
+        musicCardResults[i].setAttribute("style", "background: url(" + events[i].images[1].url + ");");
+    }
+
+};
+
+
 
 
 // Concert Pagination Next Page
@@ -124,6 +134,12 @@ var prevPage = function () {
     }
 }
 
+var getbrewery = function () {
+    
+}
+
+
+/*      Event Listeners       */
 // Event Listener for genre select menu
 $("#small").on("change", function() {
     searchByGenre(page = "0");
