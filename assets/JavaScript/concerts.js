@@ -25,11 +25,12 @@ var breweryResults = document.querySelector(".brewery-results");
 var brewPage = "1";
 var brewNextBtn = document.getElementById("brew-next");
 var brewPrevBtn = document.getElementById("brew-prev");
-
+var breweryState = document.getElementById("states");
 
 /*      fucntions       */
 // Search by Genre Function
 var searchByGenre = function () {
+    // Determine whether our parameters are met to get our desired search outcomes
     var selectedValue = $("#small").val();
     if (selectedValue == "Rap/Hiphop") {
         var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=8&page=" + page + "&totalPages&genreId=KnvZfZ7vAv1&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
@@ -41,6 +42,7 @@ var searchByGenre = function () {
         var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&totalPages&genreId=KnvZfZ7vAeA&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     };
 
+    // This is the function that gets the data we need
     fetch(apiUrl, {
         method: "get",
     }
@@ -83,7 +85,12 @@ function searchByInputAndGenre(e) {
                 return response.json().then(function (data) {
                     console.log(data)
                     if (!data._embedded) {
-                        alert("No Events Found");
+                        swal({
+                            title: "Oops!",
+                            text: "Sorry no events found!",
+                            icon: "error",
+                            button: "Try Again?",
+                          });
                     }
                     displayGenreResults(data);
                 });
@@ -141,7 +148,13 @@ var prevPage = function () {
 // Get brewery API function
 var getbrewery = function () {
     var breweryCity = breweryInput.value;
-    var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&per_page=3&page="+brewPage;
+    var selectedState = breweryState.value;
+
+    if (selectedState == true && breweryCity) {
+        var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&by_state="+selectedState+"&per_page=3&page="+brewPage; 
+    } else {
+        var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&per_page=3&page="+brewPage;  
+    };
 
     fetch(breweryApi, {
         method: "GET",
@@ -152,7 +165,12 @@ var getbrewery = function () {
         } else {
             return response.json().then(function (brewData) {
                 console.log(brewData)
+                if (brewData.length == 0) {
+                    swal("Sorry We Cannot Find Brewerys In That Area");
+                    return;
+                } else {
                 displayBreweryResluts(brewData);
+                };
             })
         }
     });
@@ -163,6 +181,7 @@ function displayBreweryResluts(brewData) {
     if (breweryResults.style.display == "none") {
         breweryResults.style.display = "flex";
     }
+
     for (var i = 0; i < brewData.length; i++) {
         breweryName[i].textContent = brewData[i].name;
         breweryAddress[i].textContent = brewData[i].street;
