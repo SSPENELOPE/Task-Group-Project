@@ -14,6 +14,7 @@ var concertTitle = document.querySelectorAll(".card-title");
 var concertLink = document.querySelectorAll(".website-link");
 var venue = document.querySelectorAll(".venue-text");
 var musicCardResults = document.querySelectorAll(".results-card");
+var concertImg = document.querySelectorAll(".concert-img");
 
 // Brewery Card Variables
 var breweryInput = document.getElementById("brewery-input");
@@ -26,6 +27,7 @@ var brewPage = "1";
 var brewNextBtn = document.getElementById("brew-next");
 var brewPrevBtn = document.getElementById("brew-prev");
 var breweryState = document.getElementById("states");
+var widget = document.getElementById("large-widget");
 
 /*      fucntions       */
 // Search by Genre Function
@@ -106,6 +108,7 @@ function displayGenreResults(data) {
     if (resultsContainer.style.display == "none" && nextPrev.style.display == "none") {
         resultsContainer.style.display = "flex";
         nextPrev.style.display = "flex";
+        widget.style.display = "none";
     } 
 
     for (var i = 0; i < events.length; i++) {
@@ -120,7 +123,7 @@ function displayGenreResults(data) {
         } else {
         venue[i].textContent = events[i]._embedded.venues[0].city.name + "," + " " + events[i]._embedded.venues[0].state.name;
         }
-        musicCardResults[i].setAttribute("style", "background: url(" + events[i].images[1].url + ");");
+        concertImg[i].setAttribute("style", "background: url(" + events[i].images[1].url + ");");
     }
 
 };
