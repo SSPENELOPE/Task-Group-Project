@@ -71,6 +71,17 @@ nav ul li {
   margin-left: auto;
   margin-right: auto;
   height: 100%;
+  max-width: 90vw;
+}
+
+.widgets {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
   max-width: 60vw;
 }
 
@@ -80,7 +91,7 @@ nav ul li {
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  width: 70vw;
+  width: 80vw;
 }
 
 .row-div {
@@ -98,12 +109,12 @@ nav ul li {
   flex-wrap: wrap;
   justify-content: space-between;
   min-height: 20vh;
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 350px;
+  max-width: 350px;
   text-align: center;
   text-decoration: none;
   background-color: rgb(72, 72, 72);
-  margin: .5em;
+  margin: 1em .2em;
   border-radius: .6em;
   background-size: 100;
 }
@@ -207,7 +218,7 @@ nav ul li {
 
 @media screen and (min-width: 1920px) {
   .homepage-card {
-      min-width: 375px;
+      min-width: 400px;
   }
 }
 

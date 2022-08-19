@@ -21,6 +21,7 @@ var brewAddress =  document.querySelectorAll(".brew-address");
 var brewUrl = document.querySelectorAll(".brew-url");
 var brewHomePage = 1;
 
+
 /*                  Functions                    */
 // Function to grab data based on user keyword input
 var searchEventButton = function () {
@@ -41,30 +42,25 @@ var searchEventButton = function () {
         })
 };
 
-// Function to display the results on homepage
+
 var displayResults = function (data) {
     //CODE TO DISPLAY RESULTS HERE
     var eventData = data._embedded.events
     console.log(eventData)
 
-    // Hide the widgets and show the pre-made cards  
     if (homepageContainer.style.display == "none") {
         homepageContainer.style.display = "flex";
         homeWidget.style.display = "none";
     }
     
-    // Cycle through and display the event data
     for (var i = 0; i < eventData.length; i++) {
         eventImg[i].setAttribute("style", "background: url(" + eventData[i].images[1].url + ");");
         eventTitle[i].textContent = eventData[i].name;
-
-        // Determine if the state name exist (some foreign countries do not have state names)
         if (eventData[i]._embedded.venues[0].state) {
         venueName[i].textContent = eventData[i]._embedded.venues[0].city.name + "," + " " + eventData[i]._embedded.venues[0].state.name;
         } else {
         venueName[i].textContent = eventData[i]._embedded.venues[0].city.name 
         }
-        
         eventLink[i].textContent = "Purchase Tickets Now";
         eventLink[i].href = eventData[i].url;
 
@@ -74,7 +70,6 @@ var displayResults = function (data) {
     }
 }
 
-// Function to cycle next page after search
 var nextHome = function (e) {
     e.preventDefault();
     if (homePage >= 0) {
@@ -83,7 +78,6 @@ var nextHome = function (e) {
     }
 };
 
-// Function to cycle prev page after search
 var prevHome = function (e) {
     e.preventDefault();
     if (homePage >= 1) {
@@ -92,12 +86,10 @@ var prevHome = function (e) {
     }
 }
 
-// Function to fetch brewery data 
 var getHomeBrewery = function () {
     var brewCity = brewInput.value;
     var homeState = brewState.value;
 
-    // Determine whether the input AND selcted value is true
     if (homeState == true && brewCity) {
         var brewApi = "https://api.openbrewerydb.org/breweries?by_city="+brewCity+"&by_state="+homeState+"&per_page=3&page="+brewHomePage; 
     } else {
@@ -123,16 +115,12 @@ var getHomeBrewery = function () {
     })
 }
 
-// Function to display the results from the brewery data
 function displayHomeBrew(homeBrew) {
     console.log(homeBrew)
-
-    // Show the brewery cards
     if (brewResults.style.display == "none") {
         brewResults.style.display = "flex";
     };
 
-    // Cycle through the brewery data
     for (var i = 0; i < homeBrew.length; i++) {
         brewName[i].textContent = homeBrew[i].name;
         brewAddress[i].textContent = homeBrew[i].street;
