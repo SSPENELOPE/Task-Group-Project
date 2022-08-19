@@ -6,7 +6,7 @@ var venueName = document.querySelectorAll(".venue-name");
 var eventDate = document.querySelectorAll(".date-time-home");
 var eventLink = document.querySelectorAll(".event-link");
 var homepageContainer = document.querySelector(".homepage-container");
-var homeWideget = document.querySelector(".large-widget");
+var homeWidget = document.getElementById("wid-div");
 var homePage = 0;
 var homePrev = document.getElementById("home-prev");
 var homeNext = document.getElementById("home-next");
@@ -49,7 +49,7 @@ var displayResults = function (data) {
 
     if (homepageContainer.style.display == "none") {
         homepageContainer.style.display = "flex";
-        homeWideget.style.display = "none";
+        homeWidget.style.display = "none";
     }
     
     for (var i = 0; i < eventData.length; i++) {
