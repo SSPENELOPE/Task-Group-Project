@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <!--   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -14,42 +13,42 @@
 </head>
 
 <body>
-<!--background video-->
+  <!--background video-->
 
-  <video class="video-1"playsinline autoplay muted loop>
+  <video class="video-1" playsinline autoplay muted loop>
     <source src="./assets/css/css-backgrounds/concert-background.mp4" type="video/webm">
     Your browser does not support the video tag.
   </video>
 
   <!--Header-->
   <header>
-      <!--Webpage Title-->
+    <!--Webpage Title-->
     <div class="container">
       <div class="page-name"><i class="fa-solid fa-champagne-glasses"></i>HEDONIST HEAVEN<i
           class="fa-solid fa-champagne-glasses"></i></div>
     </div><br>
-      <!--Search Area-->
+    <!--Search Area-->
     <div class="container-1">
-      <div class="search-area">       
-          <label for="default-search"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
-          <div class="relative">
-            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
-                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-              </svg>
-            </div>
-            <input type="search" id="default-search"
-              class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Find Events" required>
-            <button type="submit"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              id="search-btn">Search</button>
-          </div>        
+      <div class="search-area">
+        <label for="default-search"
+          class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input type="search" id="default-search"
+            class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Find Events" required>
+          <button type="submit"
+            class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            id="search-btn">Search</button>
+        </div>
       </div>
-        <!--Navbar-->
+      <!--Navbar-->
       <nav>
         <div class="py-3 px-4 mx-auto max-w-screen-xl md:px-6">
           <div class="flex items-center">
@@ -58,7 +57,8 @@
                 <a href="index.html" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="./assets/html/sports.html" class="text-gray-900 dark:text-white hover:underline">Sporting Events</a>
+                <a href="./assets/html/sports.html" class="text-gray-900 dark:text-white hover:underline">Sporting
+                  Events</a>
               </li>
               <li>
                 <a href="./assets/html/concerts.html" class="text-gray-900 dark:text-white hover:underline">Concerts</a>
@@ -71,11 +71,313 @@
   </header>
 
 
-  <div id="cards">
+
+  <main>
 
 
-  </div>
+    <!--Brewery-->
+    <section class="brewery-wrap">
+      <div class="brew-searchArea">
+        <!--Brewery Header/w Search Area-->
+        <h1 class="bg-gray-500 dark:bg-gray-700">Everythings Better With Beer!</h1>
+        <h2 class="bg-gray-500 dark:bg-gray-700">Find Your Brewery Here!</h2>
+        <div class="brewery-container">
 
+          <select id="home-states"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <option selected>Choose a State</option>
+            <option>Alabama</option>
+            <option>Alaska</option>
+            <option>Arizona</option>
+            <option>Arkansas</option>
+            <option>California</option>
+            <option>Colorado</option>
+            <option>Connecticut</option>
+            <option>Delaware</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Hawaii</option>
+            <option>Idaho</option>
+            <option>Illinois</option>
+            <option>Indiana</option>
+            <option>Iowa</option>
+            <option>Kansas</option>
+            <option>Kentucky</option>
+            <option>Louisiana</option>
+            <option>Maine</option>
+            <option>Maryland</option>
+            <option>Michigan</option>
+            <option>Minnesota</option>
+            <option>Mississippi</option>
+            <option>Missouri</option>
+            <option>Montana</option>
+            <option>Nebraska</option>
+            <option>Nevada</option>
+            <option>New Hampshire</option>
+            <option>New Jersey</option>
+            <option>New Mexico</option>
+            <option>New York</option>
+            <option>North Carolina</option>
+            <option>North Dakota</option>
+            <option>Ohio</option>
+            <option>Oklahoma</option>
+            <option>Oregon</option>
+            <option>Pennsylvania</option>
+            <option>Rhode Island</option>
+            <option>South Carolina</option>
+            <option>South Dakota</option>
+            <option>Tennessee</option>
+            <option>Texas</option>
+            <option>Utah</option>
+            <option>Vermont</option>
+            <option>Virginia</option>
+            <option>Washington</option>
+            <option>West Virginia</option>
+            <option>Wisconsin</option>
+            <option>Wyoming</option>
+          </select>
+
+          <label for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
+          <div class="relative">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+            <input type="search" id="brew-input"
+              class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-b-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search by City" required>
+            <button type="submit"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              id="brew-search">Search</button>
+          </div>
+        </div>
+      </div>
+
+      <!--Brewery Results Container-->
+      <div class="brew-results" style="display: none;">
+        <!--Result 1-->
+        <div
+          class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <img class="brewery-img rounded-t-lg" src="./assets/css/css-backgrounds/brewery-image.webp" alt="Brewery Table" />
+          <div class="p-5">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
+                class="brew-name">Brewery Name</a></h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><a target="_blank"
+                class="brew-address">Brewery Address</a></p>
+            <a href="#" target="_blank"
+              class="brew-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Visit Us
+              <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!--Result 2-->
+        <div
+          class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <img class="brewery-img rounded-t-lg" src="./assets/css/css-backgrounds/best-beer-glasses-saveur.webp" alt="Beer Glass" />
+          <div class="p-5">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
+                class="brew-name">Brewery Name</a></h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><a target="_blank"
+                class="brew-address">Brewery Address</a></p>
+            <a href="#" target="_blank"
+              class="brew-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Visit Us
+              <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+
+        <!--Result 3-->
+        <div
+          class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+          <img class="brewery-img rounded-t-lg" src="./assets/css/css-backgrounds/l-intro-1658943990.jpg" alt="Beer Picture" />
+          <div class="p-5">
+            <h5 class="brewery-name mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
+                class="brew-name">Brewery Name</a></h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><a target="_blank"
+                class="brew-address">Brewery Address</a></p>
+            <a href="#" target="_blank"
+              class="brew-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Visit Us
+              <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!--Brewery Pagination Buttons-->
+        <div class="next-prev-brew-home" id="brewNextPrev">
+          <!-- Previous Button -->
+          <button id="brew-prev"
+            class="h-10 w-20 mr-6 inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+            Previous
+          </button>
+
+          <!-- Next Button -->
+          <button id="brew-next"
+            class="h-10 w-20 inline-flex items-center py-2 px-4 ml-6 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+            Next
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!--Music Results Cards-->
+    <seciton class="homepage-results">
+
+      <!--Placeholder Widget-->
+      <div class="large-widget">
+        <h1 class="widget-text">Featured</h1>
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="#cc721e" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
+      </div>
+
+      <div class="large-widget">
+        <h1 class="widget-text">Football</h1>
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="football" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="#cc721e" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
+      </div>
+
+      <div class="large-widget">
+        <h1 class="widget-text">Music</h1>
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="music" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="#cc721e" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
+      </div>
+
+      <!-- Start of Results cards -->
+      <div class="homepage-container" style="display: none;">
+        <div class="row-div">
+        <div class="homepage-card">
+          <div class="event-img"></div>
+          <div class="title-div">
+            <h2 class="event-title">TITLE</h2>
+          </div>
+          <div class="event-venue">
+            <h4 class="venue-name">Venue</h4>
+          </div>
+          <div class="details-homepage">
+            <h4 class="date-time-home">Start time/Date</h4>
+            <a class="event-link" target="_blank">Website-link</a>
+          </div>
+        </div>
+
+        <div class="homepage-card">
+          <div class="event-img"></div>
+          <div class="title-div">
+            <h2 class="event-title">TITLE</h2>
+          </div>
+          <div class="event-venue">
+            <h4 class="venue-name">Venue</h4>
+          </div>
+          <div class="details-homepage">
+            <h4 class="date-time-home">Start time/Date</h4>
+            <a class="event-link" target="_blank">Website-link</a>
+          </div>
+        </div>
+
+        <div class="homepage-card">
+          <div class="event-img"></div>
+          <div class="title-div">
+            <h2 class="event-title">TITLE</h2>
+          </div>
+          <div class="event-venue">
+            <h4 class="venue-name">Venue</h4>
+          </div>
+          <div class="details-homepage">
+            <h4 class="date-time-home">Start time/Date</h4>
+            <a class="event-link" target="_blank">Website-link</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row-div">
+        <div class="homepage-card">
+          <div class="event-img"></div>
+          <div class="title-div">
+            <h2 class="event-title">TITLE</h2>
+          </div>
+          <div class="event-venue">
+            <h4 class="venue-name">Venue</h4>
+          </div>
+          <div class="details-homepage">
+            <h4 class="date-time-home">Start time/Date</h4>
+            <a class="event-link" target="_blank">Website-link</a>
+          </div>
+        </div>
+
+        <div class="homepage-card">
+          <div class="event-img"></div>
+          <div class="title-div">
+            <h2 class="event-title">TITLE</h2>
+          </div>
+          <div class="event-venue">
+            <h4 class="venue-name">Venue</h4>
+          </div>
+          <div class="details-homepage">
+            <h4 class="date-time-home">Start time/Date</h4>
+            <a class="event-link" target="_blank">Website-link</a>
+          </div>
+        </div>
+
+        <div class="homepage-card">
+          <div class="event-img"></div>
+          <div class="title-div">
+            <h2 class="event-title">TITLE</h2>
+          </div>
+          <div class="event-venue">
+            <h4 class="venue-name">Venue</h4>
+          </div>
+          <div class="details-homepage">
+            <h4 class="date-time-home">Start time/Date</h4>
+            <a class="event-link" target="_blank">Website-link</a>
+          </div>
+        </div>
+      </div>
+
+
+        <div class="home-next-prev">
+          <!-- Previous Button -->
+          <button id="home-prev"
+            class="h-10 w-20 mr-6 inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+            Previous
+          </button>
+  
+          <!-- Next Button -->
+          <button id="home-next"
+            class="h-10 w-20 inline-flex items-center py-2 px-4 ml-6 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+            Next
+          </button>
+        </div>
+
+      </div>
+
+  </seciton>
+</main>
+
+
+  <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/calendar/1.0.0/lib/main-widget.js"></script>
+  <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>

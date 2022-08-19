@@ -1,17 +1,32 @@
 /*               Variables               */
 var searchInput = $("#default-search");
-// search button
+var eventImg = document.querySelectorAll(".event-img");
+var eventTitle = document.querySelectorAll(".event-title");
+var venueName = document.querySelectorAll(".venue-name");
+var eventDate = document.querySelectorAll(".date-time-home");
+var eventLink = document.querySelectorAll(".event-link");
+var homepageContainer = document.querySelector(".homepage-container");
+var homeWideget = document.querySelector(".large-widget");
+var homePage = 0;
+var homePrev = document.getElementById("home-prev");
+var homeNext = document.getElementById("home-next");
 
-// card variables
-
+// Brewery Variables
+var brewInput = document.getElementById("brew-input");
+var brewSearch = document.getElementById("brew-search");
+var brewState = document.getElementById("home-states")
+var brewResults = document.querySelector(".brew-results");
+var brewName = document.querySelectorAll(".brew-name");
+var brewAddress =  document.querySelectorAll(".brew-address");
+var brewUrl = document.querySelectorAll(".brew-url");
+var brewHomePage = 1;
 
 /*                  Functions                    */
 // Function to grab data based on user keyword input
 var searchEventButton = function () {
     var userInput = searchInput.val();
-    if (userInput == "") {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword="+userInput+"&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
-   
+
+    var apiUrl = 'https://app.ticketmaster.com/discovery/v2/events.json?page='+homePage+'&size=6&keyword='+userInput+'&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq';
 
     fetch(apiUrl)
         .then(function(response) {
@@ -24,38 +39,93 @@ var searchEventButton = function () {
                 })
             }
         })
-
-    .catch(function(error) {
-        alert(error);
-    });
 };
 
-
-// The below code is a work in progress displaying cards on the homescreen for specified events
-
-// below code has been updated to return the name of querried results on the index.html page. Still needs work 
-
-
-var displayCards = document.querySelector("#cards")
 
 var displayResults = function (data) {
     //CODE TO DISPLAY RESULTS HERE
     var eventData = data._embedded.events
     console.log(eventData)
 
-    if (resultsContainer.style.display == "none") {
-        resultsContainer.style.display == "flex";
+    if (homepageContainer.style.display == "none") {
+        homepageContainer.style.display = "flex";
+        homeWideget.style.display = "none";
     }
     
-    var results = data._embedded.events.length
-    for (var i = 0; i < results; i++) {
-        var element = document.createElement("h4")
-        displayCards.append(element)
-        element.append(eventData[i].name)
-        console.log(eventData[i].name)
+    for (var i = 0; i < eventData.length; i++) {
+        eventImg[i].setAttribute("style", "background: url(" + eventData[i].images[1].url + ");");
+        eventTitle[i].textContent = eventData[i].name;
+        if (eventData[i]._embedded.venues[0].state) {
+        venueName[i].textContent = eventData[i]._embedded.venues[0].city.name + "," + " " + eventData[i]._embedded.venues[0].state.name;
+        } else {
+        venueName[i].textContent = eventData[i]._embedded.venues[0].city.name 
+        }
+        eventLink[i].textContent = "Purchase Tickets Now";
+        eventLink[i].href = eventData[i].url;
+
+        var eventDateTime = eventData[i].dates.start.dateTime;
+        var eventReadableDate = new Date(eventDateTime);
+        eventDate[i].textContent = eventReadableDate.toDateString();
+    }
+}
+
+var nextHome = function (e) {
+    e.preventDefault();
+    if (homePage >= 0) {
+        homePage++;
+        searchEventButton();
     }
 };
 
+var prevHome = function (e) {
+    e.preventDefault();
+    if (homePage >= 1) {
+        homePage--;
+        searchEventButton();
+    }
+}
+
+var getHomeBrewery = function () {
+    var brewCity = brewInput.value;
+    var homeState = brewState.value;
+
+    if (homeState == true && brewCity) {
+        var brewApi = "https://api.openbrewerydb.org/breweries?by_city="+brewCity+"&by_state="+homeState+"&per_page=3&page="+brewHomePage; 
+    } else {
+        var brewApi = "https://api.openbrewerydb.org/breweries?by_city="+brewCity+"&per_page=3&page="+brewHomePage; 
+    }
+
+    fetch(brewApi, {
+        method: "GET",
+    })
+    .then(function (resp) {
+        if (!resp.ok) {
+            alert(resp.statusText);
+        } else {
+            return resp.json().then(function (homeBrew) {
+                if (homeBrew.length == 0) {
+                    swal("Sorry We Cannot Find Brewerys In That Area");
+                    return;
+                } else {
+                    displayHomeBrew(homeBrew);
+                }
+            })
+        }
+    })
+}
+
+function displayHomeBrew(homeBrew) {
+    console.log(homeBrew)
+    if (brewResults.style.display == "none") {
+        brewResults.style.display = "flex";
+    };
+
+    for (var i = 0; i < homeBrew.length; i++) {
+        brewName[i].textContent = homeBrew[i].name;
+        brewAddress[i].textContent = homeBrew[i].street;
+        brewAddress[i].href = "https://maps.google.com/?q=" + homeBrew[i].street;
+        brewUrl[i].href = homeBrew[i].website_url;
+    };
 }
 
 
@@ -63,4 +133,9 @@ var displayResults = function (data) {
 // Search button next to input box on header
 $("#search-btn").on("click", searchEventButton);
 
+// Brewery Search button 
+brewSearch.addEventListener("click", getHomeBrewery);
 
+// Event Listners for next and prev pagingation
+homeNext.addEventListener("click", nextHome);
+homePrev.addEventListener("click", prevHome);
