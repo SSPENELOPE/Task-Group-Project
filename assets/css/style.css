@@ -9,11 +9,17 @@ header {
     rgba(204, 33, 36, 0.6) 100%
   );
   color: lime;
-  /*  text-decoration: overline; */
   border: 3px solid lime;
   height: 20vh;
   font-family: rubik-dirt;
   font-size: 30px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+ /*  height: 100vh; */
+  width: 100vw;
 }
 
 .container {
@@ -55,30 +61,162 @@ nav ul li {
   z-index: -9999;
 }
 
-/* Still a work in progress, just wanted to get something displayed on the page.  */
-#cards {
+
+/*      Event Results Card        */
+.homepage-results {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
+  align-content: center;
   margin-left: auto;
   margin-right: auto;
-  height: 20vh;
-  width: 15vw;
-  border: 3px solid limegreen !important;
+  height: 100%;
+  max-width: 60vw;
 }
 
-#cards h4 {
+.homepage-container {
   display: flex;
-  height: 20vh;
-  min-width: 400px;
-  align-items: flex-start;
-  text-decoration: none;
-  border: 3px solid yellow;
-  background-color: rgb(72, 72, 72);
-  margin: 0.5em;
-  border-radius: 0.6em;
-  font-size: 32px;
-  color: white;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70vw;
 }
+
+.row-div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+}
+
+.homepage-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 20vh;
+  min-width: 250px;
+  max-width: 250px;
+  text-align: center;
+  text-decoration: none;
+  background-color: rgb(72, 72, 72);
+  margin: .5em;
+  border-radius: .6em;
+  background-size: 100;
+}
+
+.event-img {
+  display: flex;
+  height: 150px;
+  width: 100%;
+  background-size: cover;
+}
+
+.event-title {
+  margin: 0 auto;
+  color: rgba(255, 165, 0);
+  font-size: 15px;
+  border-radius: .6em;
+}
+
+.venue-name {
+  margin: 0 auto;
+  color: white;
+  text-shadow: 0.2px 0.4px 0.6px black;
+  font-size: 15px;
+  font-weight: 900;
+  border-radius: .6em;
+}
+
+.date-time-home {
+  align-self: flex-end;
+  margin-left: 5px;
+}
+
+.details-homepage {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-between;
+  color: orange;
+  background-color: black;
+  width: 100%;
+  border-radius: 0 0 0.6em 0.6em;
+ /*  margin: 0 6px; */
+}
+
+.event-link {
+  align-self: flex-end;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+
+.home-next-prev {
+  display: flex;
+  align-items: flex-end;
+}
+
+.large-widget {
+  margin-top: 1em;
+}
+
+.widget-text {
+  font-size: 30px;
+  color: #fff;
+}
+
+
+/*    Brewery Section       */
+.brewery-wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-width: 20vw;
+  margin-left: 0.5em;
+  margin-top: 1em;
+}
+
+.brewery-wrap h1,
+.brewery-wrap h2{
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+.brew-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.brewery-img {
+  max-height: 215px;
+  width: 100vw;
+}
+
+.next-prev-brew-home {
+  display: flex;
+  align-items: flex-end;
+}
+
+/*      Media Queries       */
+
+@media screen and (min-width: 1920px) {
+  .homepage-card {
+      min-width: 375px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .row-div {
+    flex-direction: column;
+  }
+  .homepage-results {
+    flex-direction: column;
+  }
+}
+
