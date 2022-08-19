@@ -3,6 +3,7 @@ var page = "0";
 var nextPrev = document.getElementById("next-prev");
 var userSearch = document.getElementById("sportSearch-btn");
 var userInput = document.getElementById("music-input");
+var sportsCards = document.getElementById("container-id");
 
 // the result car variables
 var sportsResutlsWrapper = document.querySelector(".sports-results");
@@ -10,7 +11,7 @@ var sportsDateTime = document.querySelector(".date-time");
 var venue = document.querySelectorAll (".venue-text");
 var sportsTitle = document.querySelectorAll (".card-title");
 var sportsLink = document.querySelectorAll(".website-link");
-var sportsCardsResults = document.querySelectorAll(".restults-results");
+var sportsCardsResults = document.querySelectorAll(".results-card");
 
 
 
