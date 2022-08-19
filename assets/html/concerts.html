@@ -95,7 +95,7 @@
                 <h1 class="bg-gray-500 dark:bg-gray-700">Everythings Better With Beer!</h1>
                 <h2 class="bg-gray-500 dark:bg-gray-700">Find Your Brewery Here!</h2>
                 <div class="brewery-container">
-                    <!--State Selector Dropdown-->
+
                     <select id="states" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option selected>Choose a State</option>
                         <option>Alabama</option>
@@ -262,8 +262,15 @@
 
         <!--Music Results Cards-->
         <seciton class="music-results">
+
+            <!--Placeholder Widget-->
+            <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="luke combs" w-theme="grid" w-colorscheme="dark" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="month" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_ebq4y9" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-latlong="" id="large-widget"></div>
+
+            <!--Start of Results cards-->
             <div class="results-container" id="container-id" style="display: none;">
+                
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -277,6 +284,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -290,6 +298,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -303,6 +312,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -316,6 +326,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -329,6 +340,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -342,6 +354,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -355,6 +368,7 @@
                 </div>
 
                 <div class="results-card">
+                    <div class="concert-img"></div>
                     <div class="title-div">
                         <h2 class="card-title">TITLE</h2>
                     </div>
@@ -384,13 +398,14 @@
                     Next
                 </button>
             </div>
-
-
         </seciton>
+
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="Kendrick lamar" w-theme="listviewthumbnails" w-colorscheme="dark" w-width="350" w-height="600" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="month" w-layout="vertical" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="xxl" w-titlelink="off" w-sorting="groupByName" w-id="id_ebq4y9" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-latlong="" class="widget"></div>
 
 
     </main>
-
+    
+    <script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
