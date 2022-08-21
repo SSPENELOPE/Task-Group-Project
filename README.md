@@ -24,5 +24,5 @@
 
 ## Credits
 - AJ for building the header on the homepage which acted as template for the rest of the pages
-- Sara for what has been constructed on the homepage
+- Sara for what has been constructed on the sports page
 - The insturctors and TA's at the UofM Coding Bootcamp for helping us when we found ourselves lost or stuck on a problem 
