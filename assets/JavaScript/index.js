@@ -130,6 +130,8 @@ function displayHomeBrew(homeBrew) {
 }
 
 
+
+
 /*               Event Listeners              */
 // Search button next to input box on header
 $("#search-btn").on("click", searchEventButton);

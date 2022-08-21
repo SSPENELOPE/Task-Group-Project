@@ -226,8 +226,20 @@ nav ul li {
   .row-div {
     flex-direction: column;
   }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .homepage-results {
     flex-direction: column;
+  }
+
+  .brewery-wrap {
+    min-width: 300px;
+    max-width: 500px;
+   /*  margin-bottom: 30px; */
   }
 }
 
