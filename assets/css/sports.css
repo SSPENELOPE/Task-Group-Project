@@ -161,7 +161,7 @@ nav a:hover {
     border-radius: .6em;
 }
 
-.brewery-wrapper {
+.brews-wrapper {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -169,16 +169,8 @@ nav a:hover {
     margin-left: 1em;
 }
 
-.brewery-wrapper h1,
-.brewery-wrapper h2{
-    text-align: center;
-    color: white;
-    font-size: 25px;
-}
-
-.brewery-results {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 3px;
+@media screen and (min-width: 1920px) {
+    .results-card {
+        min-width: 450px;
+    }
 }
