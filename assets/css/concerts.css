@@ -99,7 +99,7 @@ nav ul li{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 30vh;
+    height: 32vh;
     max-width: 400px;
     text-align: center;
     text-decoration: none;
@@ -214,7 +214,7 @@ nav ul li{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: normal;
         align-content: center;
         height: 100vh;
         margin: 10px;
@@ -222,13 +222,22 @@ nav ul li{
      
 
     .results-card {
-        min-width: 100px;
-        max-width: 100px;
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 40vh;
     }
 
     .brewery-wrapper h1,
     .brewery-wrapper h2 {
         font-size: 15px;
+    }
+
+    .brewery-wrapper {
+        min-width: 300px;
+    }
+
+    .brew-img {
+        min-width: 300px;
     }
 
     .page-name {
