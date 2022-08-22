@@ -35,24 +35,33 @@ var searchEventButton = function () {
                 alert(response.statusText)
             } else {
                 return response.json().then(function(data) {
-                    console.log(data);
-                    displayResults(data);
+                    if (!data._embedded) {
+                        swal({
+                            title: "Oops!",
+                            text: "Sorry no events found!",
+                            icon: "error",
+                            button: "Try Again?",
+                          });
+                    } else {
+                        displayResults(data);
+                    }
                 })
             }
         })
 };
 
-
+// Function to display the results of user search
 var displayResults = function (data) {
-    //CODE TO DISPLAY RESULTS HERE
     var eventData = data._embedded.events
     console.log(eventData)
 
+    // Hide the widgets and display the results
     if (homepageContainer.style.display == "none") {
         homepageContainer.style.display = "flex";
         homeWidget.style.display = "none";
     }
     
+    // Cycle through and display the data from our fetch
     for (var i = 0; i < eventData.length; i++) {
         eventImg[i].setAttribute("style", "background: url(" + eventData[i].images[1].url + ");");
         eventTitle[i].textContent = eventData[i].name;
@@ -70,6 +79,7 @@ var displayResults = function (data) {
     }
 }
 
+// Next button for pagination 
 var nextHome = function (e) {
     e.preventDefault();
     if (homePage >= 0) {
@@ -78,6 +88,7 @@ var nextHome = function (e) {
     }
 };
 
+// Previous Button for pagination 
 var prevHome = function (e) {
     e.preventDefault();
     if (homePage >= 1) {
@@ -86,6 +97,7 @@ var prevHome = function (e) {
     }
 }
 
+// Function to fetch brewery data
 var getHomeBrewery = function () {
     var brewCity = brewInput.value;
     var homeState = brewState.value;
@@ -115,6 +127,7 @@ var getHomeBrewery = function () {
     })
 }
 
+// Function to display the brewery data
 function displayHomeBrew(homeBrew) {
     console.log(homeBrew)
     if (brewResults.style.display == "none") {

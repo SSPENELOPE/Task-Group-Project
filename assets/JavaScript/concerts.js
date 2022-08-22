@@ -93,8 +93,9 @@ function searchByInputAndGenre(e) {
                             icon: "error",
                             button: "Try Again?",
                           });
+                    } else {
+                        displayGenreResults(data);
                     }
-                    displayGenreResults(data);
                 });
             }
         }))
