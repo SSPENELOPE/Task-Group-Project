@@ -13,6 +13,13 @@ video {
     z-index: -9999;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100vh;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -52,6 +59,46 @@ nav ul li{
     font-family: monospace;
 }
 
+nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 55%;
+}
+
+
+nav a {
+    text-decoration: none;
+    padding: 5px 10px;
+    color: rgb(139, 131, 131);
+    color:rgb(72, 72, 72);
+    margin-right: 10px;
+    background-image: linear-gradient(270deg, white 0%, black 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: bottom;
+    transition: all 0.25s ease-in;
+    font-size: 1.4rem;
+}
+
+nav a:hover {
+    background-size: 100% 100%;
+    color: white;
+}
+   
+
+.sports-results {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    width: 50vw;
+}
+
 .search-area {
     width: 25%;
     margin-right: 0%;
@@ -66,14 +113,22 @@ nav ul li{
 
 .results-card {
     display: flex;
+    flex-direction: row;
     height: 20vh;
-    min-width: 400px;
+    min-width: 100px;
     align-items: flex-start;
     text-decoration: none;
     border: 3px solid greenyellow;
     background-color: rgb(72, 72, 72);
     margin: .5em;
     border-radius: .6em;
+}
+
+.sports-img {
+    height: 110px;
+    width: 60px;
+    background-size: cover;
+    align-self: flex-end;
 }
 
 .card-title {
@@ -90,4 +145,40 @@ nav ul li{
 .website-link {
     align-self: flex-end;
     color: whitesmoke;
+}
+
+.card-title {
+    margin: 0 auto;
+    color: white;
+    font-size: 15px;
+    border-radius: .6em;
+}
+
+.venue-text {
+    margin: 0 auto;
+    color: white;
+    font-size: 15px;
+    border-radius: .6em;
+}
+
+.brewery-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 20vw;
+    margin-left: 1em;
+}
+
+.brewery-wrapper h1,
+.brewery-wrapper h2{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.brewery-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3px;
 }
