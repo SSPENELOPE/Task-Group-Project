@@ -1,9 +1,11 @@
 // varibales
+var resultContainer = document.getElementById("container-id");
 var page = "0";
-var nextPrev = document.getElementById("next-prev");
+var nxtPrev = document.getElementById("next-prev");
+var sportsPrev = document.getElementById("sports-prev");
+var sportsNext = document.getElementById("sports-Next");
 var userSearch = document.getElementById("sportSearch-btn");
 var userInput = document.getElementById("music-input");
-var sportsCards = document.getElementById("container-id");
 
 // the result card variables
 var sportsResutlsWrapper = document.querySelector(".sports-results");
@@ -12,16 +14,20 @@ var venue = document.querySelectorAll (".venue-text");
 var sportsTitle = document.querySelectorAll (".card-title");
 var sportsLink = document.querySelectorAll(".website-link");
 var sportsCardsResults = document.querySelectorAll(".results-card");
-var sportsImg = document.querySelectorAll(".sports-img")
+var sportsImg = document.querySelectorAll(".sports-img");
 
 // brewery card variables
-var beweryInput = document.getElementById("brewery-input");
-var brewerySearch = document.getElementById("brewery-search");
-var breweryName = document.querySelectorAll(".brewery-name");
-var breweryAddress = document.querySelectorAll(".brewery-address");
-var breweryUrl = document.querySelectorAll(".brewery-url");
-var breweryResults = document.querySelectorAll(".brewery-results");
-var brewPage = "1";
+var brewsInput = document.getElementById("brews-input");
+var brewsSearch = document.getElementById("brews-search");
+var brewsName = document.querySelectorAll(".brews-name");
+var brewsAddress = document.querySelectorAll(".brews-address");
+var brewsUrl = document.querySelectorAll(".brews-url");
+var brewsResults = document.querySelector(".brews-results");
+var brewsPage = "1";
+var brewsNextBtn = document.getElementById("brews-next");
+var brewsPrevBtn = document.getElementById("brews-prev");
+var brewsState = document.getElementById("sports-states");
+var widget = document.getElementById("large-widgets");
 
 
 // functions
@@ -29,60 +35,36 @@ var brewPage = "1";
 var searchBySport = function () {
     var selectedValue = $("#medium").val();
     if (selectedValue ) {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&keyword="+selectedValue+"&page=" + page + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&keyword="+selectedValue+"&page=" + page + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     } 
 //keyword="+selectedValue+"
 
 
-    fetch(apiUrl, {
-        method: "get", 
-    }
-    )
-        .then(function (response) {
-            if (!response.ok) {
-                alert(response.statustext)
-            } else {
-                return response.json().then(function (data) {
-                    console.log(data)
-                    displaySportsResults(data);
-                });
-            }
-        })
-};
-
-//display sports results funciton 
-function displaySportsResults(data) {
-    var events = data._embedded.events;
-    
-    console.log(events);
-    
-    if (sportsCards.style.display == "none") {
-        sportsCards.style.display = "flex" ;
-    }
-    for (var i= 0; i< events.length; i++ ) {
-    
-        venue[i].textContent = events[i]._embedded.venues[0].name;
-        sportsTitle[i].textContent = events[i].name;
-        sportsLink[i].textContent = "Purchase Tickets Now";
-        sportsLink[i].href = events[i].url;
-        /* sportsImg[i].textContent = events[i].images[0].attribution; */
-           
-        sportsImg[i].setAttribute("style", "background: url("+ events[i].images[1].url + ");");
-        
-    }
-
-    
+fetch(apiUrl, {
+    method: "get",
 }
-
+)
+    .then(function (response) {
+        if (!response.ok) {
+            alert(response.statustext)
+        } else {
+            return response.json().then(function (data) {
+                // Console loging the returned data so we can see what we need to get
+                console.log(data)
+                displayGenreResults(data);
+            });
+        }
+    });
+};
 
 
 // search by sport and input function
 function searchByInputAndSport(e) {
     e.preveentDefault();
     var selectedValue = $("medium").val();
-    var sportsInput = userInput.value; 
+    var SportsInput = userInput.value; 
     if (selectedValue == "Football" && sportsInput) {
-        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&page=" + page + "&genreId=KnvZfZ7vAv1&keyword=" + sportsInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAv1&keyword=" + sportsInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     } else if (selectedValue == "Baseball" && sportsInput) {
         var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAv1&keyword=" + sportsInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     } else if (selectedValue == "Basketball" && sportsInput) {
@@ -99,62 +81,55 @@ function searchByInputAndSport(e) {
             alert(response.statustext)
         } else {
             return response.json().then(function (data) {
+                console.log(data)
+                if (!data._embedded) {
+                    swal({
+                        title: "Ooops!",
+                        text: "Sprry no events found!",
+                        icon: "error",
+                        button: "Try Again?",
+                    });
+                }
                 displaySportsResults(data);
-            })
+            });
         }
-    })
-    .catch(function () {
-        alert("no evnets found");
     });
 }
 
-// brewery API function 
-var getbrewery = function () {
-    var breweryCity = breweryInput.value;
-    var selectedState = breweryState.value;
+//display sports results funciton 
+function displayGenreResults(data) {
+    var events = data._embedded.events;
+    console.log(events);
 
-    if (selectedState == true && breweryCity) {
-        var breweryAPI = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&by_state"+selectedState+"&per_page=3&page="+brewPage;
-    } else {
-        var breweryApi = "https://api.openbrewerydb.org/breweries?by_city="+breweryCity+"&per_page=3&page="+brewPage;
-    };
+    if (resultContainer.style.display == "none" && nxtPrev.style.display == "none") {
+        resultsContainer.style.display = "flex";
+        nextPrev.style.display = "flex";
+        widget.style.display = "none";
+    } 
 
-    fetch(breweryApi, {
-        method: "GET",
-    })
-    .then(function (response) {
-        if(!response.ok) {
-            alert(response.statusText)
+    for (var i = 0; i < events.length; i++) {
+        var sportsDate = events[i].dates.start.dateTime;
+        var sportsReadableDate = new Date(sportsDate);
+        sportsDateTime[i].textContent = sportsReadableDate.toDateString();
+        sportsTitle[i].textContent = events[i].name;
+        sportstLink[i].textContent = "Purchase Tickets Now";
+        sportsLink[i].href = events[i].url;
+        if (!events[i]._embedded.venues[0].city || !events[i]._embedded.venues[0].state) {
+            venue[i].textContent = events[i]._embedded.venues[0].name;
         } else {
-            return response.json().then(function (brewData) {
-                console.log(brewData)
-                if (brewData.length == 0) {
-                    swal ("sorry we cannot find brewerys in that area");
-                    return;
-                } else {
-                    displayBreweryResults(brewData);
-                };
-            })
+        venue[i].textContent = events[i]._embedded.venues[0].city.name + "," + " " + events[i]._embedded.venues[0].state.name;
         }
-    });
-};
-
-// function to bdispkay brewery results
-function displayBreweryResluts(brewData) {
-    if (breweryResults.style.display == "none") {
-        breweryResults.style.display = "flex";
-    };
-
-    for (var i = 0; i < brewData.length; i ++) {
-        breweryName[i].textContent = brewData[i].name;
-        breweryAddress[i].textContent = brewData[i].street;
-        brewyAddress[i].href = "https://maps.google.com/?" + brewData[i].stret;
-        breweryUrl[i].href = brewData[i].href = brewData[i].website_url;
-    };
-}
+        sportsImg[i].setAttribute("style", "background: url(" + events[i].images[1].url + ");");
+    }
 
 
-//next page 
+        
+    }
+
+    
+
+
+//sports next page 
 var nextPage = function (event) {
     event.preveentDefault()
     if (page >= 0) {
@@ -164,7 +139,7 @@ var nextPage = function (event) {
     }
 }
 
-//previous page
+//sports previous page
 var prevPage = function () {
     if (page >= 1) {
         page--;
@@ -173,6 +148,52 @@ var prevPage = function () {
         return;
     }
 }
+
+//get brewery API function 
+var getBrews = function () {
+    var brewsCity = brewsInput.value;
+    var sportsState = brewsState.value;
+
+    if (sportsState == true && brewsCity) {
+        var brewsApi = "https://api.openbrewerydb.org/breweries?by_city="+brewsCity+"&by_state="+sportsState+"&per_page=3&page="+brewSportsPage; 
+    } else {
+        var brewsApi = "https://api.openbrewerydb.org/breweries?by_city="+brewsCity+"&per_page=3&page="+brewSportsPage;  
+    };
+
+    fetch(brewsApi, {
+        method: "GET",
+    })
+    .then(function (res) {
+        if (!res.ok) {
+            alert(res.statusText)
+        } else {
+            return res.json().then(function (sportsBrews) {
+                console.log(sportsBrews)
+                if (sportsBrews.length == 0) {
+                    swal("Sorry We Cannot Find Brewerys In That Area");
+                    return;
+                } else {
+                displaySportsBrews(sportsBrews);
+                };
+            })
+        }
+    })
+}
+
+function displaySportsBrew(sportsBrews) {
+    console.log(sportsBrews)
+    if (brewsResults.style.display == "none") {
+        brewsResults.style.display = "flex";
+    };
+
+    for (var i = 0; i < homeBrew.length; i++) {
+        brewsName[i].textContent = sportsBrews[i].name;
+        brewsAddress[i].textContent = sportsBrews[i].street;
+        brewsAddress[i].href = "https://maps.google.com/?q=" + sportsBrews[i].street;
+        brewsUrl[i].href = sportsBrew[i].website_url;
+    };
+}
+
 
 // event listener for sports select menu
 $("#medium").on("change", function() {
