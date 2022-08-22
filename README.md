@@ -15,7 +15,7 @@
 
 - Located on the homepage and concert page on the left hand side is a search bar and dropdown for a brewery search. Here you can either search by state and city or if you feel comfortable just search by city. A list of breweries will populate in groups of  three's where you can sort through them, click the link to visit the brewery website or click the address to get directions.
 
-![alt text](assets/css/css-backgrounds/project-screenshot.png)
+![alt text](assets/css/css-backgrounds/website%20Screenshot.png)
 
 - You can view and Use this page at (https://sspenelope.github.io/Task-Group-Project/)
 
@@ -25,6 +25,6 @@
 - The brewery API is no longer being updated so you may find that links to the breweries website are no longer active or that brewery may have changed locations. The owner of the API is creating a new version. When that version is released, this site will be updated with the newest information
 
 ## Credits
-- AJ for building the header on the homepage which acted as template for the rest of the pages
-- Sara for what has been constructed on the sports page
+- AJ for building the header on the homepage which acted as template for the rest of the pages, also for adding the amazing styling all over the pages 
+- Sara for what has been constructed on the sports page to include the JavaScript and HTML
 - The insturctors and TA's at the UofM Coding Bootcamp for helping us when we found ourselves lost or stuck on a problem 
