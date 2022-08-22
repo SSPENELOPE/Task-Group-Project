@@ -76,14 +76,14 @@
 
   <!--brewery section-->
   
-  <section class="brewery-wrapper">
-    <div class="brew-searchArea">
+  <section class="brews-wrapper">
+    <div class="brews-searchArea">
         <!--Brewery Header/w Search Area-->
         <h1 class="bg-gray-500 dark:bg-gray-700">Everythings Better With Beer!</h1>
         <h2 class="bg-gray-500 dark:bg-gray-700">Find Your Brewery Here!</h2>
-        <div class="brewery-container">
+        <div class="brews-container">
 
-            <select id="states" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <select id="sports-states" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option selected>Choose a State</option>
                 <option>Alabama</option>
                 <option>Alaska</option>
@@ -146,29 +146,29 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                     </svg>
                 </div>
-                <input type="search" id="brewery-input"
+                <input type="search" id="brews-input"
                     class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-b-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Search by City" required>
                 <button type="submit"
                     class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    id="brewery-search">Search</button>
+                    id="brews-search">Search</button>
             </div>
         </div>
     </div>
 
     <!--Brewery Results Container-->
-    <div class="brewery-results" style="display: none;">
+    <div class="brews-results" style="display: none;">
         <!--Result 1-->
         <div
             class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <img class="brew-img rounded-t-lg" src="../css/css-backgrounds/brewery-image.webp" alt="" />
+            <img class="brews-img rounded-t-lg" src="../css/css-backgrounds/brewery-image.webp" alt="" />
             <div class="p-5">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
-                        class="brewery-name ">Brewery Name</a></h5>
+                        class="brews-name ">Brewery Name</a></h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><a target="_blank"
-                        class="brewery-address">Brewery Address</a></p>
+                        class="brews-address">Brewery Address</a></p>
                 <a href="#" target="_blank"
-                    class="brewery-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    class="brews-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Visit Us
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -183,15 +183,15 @@
         <!--Result 2-->
         <div
             class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <img class="brew-img rounded-t-lg" src="../css/css-backgrounds/best-beer-glasses-saveur.webp"
+            <img class="brews-img rounded-t-lg" src="../css/css-backgrounds/best-beer-glasses-saveur.webp"
                 alt="" />
             <div class="p-5">
                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
-                        class="brewery-name">Brewery Name</a></h5>
+                        class="brews-name">Brewery Name</a></h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><a target="_blank"
-                        class="brewery-address">Brewery Address</a></p>
+                        class="brews-address">Brewery Address</a></p>
                 <a href="#" target="_blank"
-                    class="brewery-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    class="brews-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Visit Us
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -207,14 +207,14 @@
         <!--Result 3-->
         <div
             class="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
-            <img class="brew-img rounded-t-lg" src="../css/css-backgrounds/l-intro-1658943990.jpg" alt="" />
+            <img class="brews-img rounded-t-lg" src="../css/css-backgrounds/l-intro-1658943990.jpg" alt="" />
             <div class="p-5">
-                <h5 class="brewery-name mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
-                        class="brewery-name">Brewery Name</a></h5>
+                <h5 class="brews-name mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"><a
+                        class="brews-name">Brewery Name</a></h5>
                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><a target="_blank"
-                        class="brewery-address">Brewery Address</a></p>
+                        class="brews-address">Brewery Address</a></p>
                 <a href="#" target="_blank"
-                    class="brewery-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    class="brews-url inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Visit Us
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
