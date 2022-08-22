@@ -18,7 +18,6 @@ header {
 main {
   display: flex;
   flex-direction: row;
- /*  height: 100vh; */
   width: 100vw;
 }
 
@@ -156,7 +155,6 @@ nav ul li {
   background-color: black;
   width: 100%;
   border-radius: 0 0 0.6em 0.6em;
- /*  margin: 0 6px; */
 }
 
 .event-link {
