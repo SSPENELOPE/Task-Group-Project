@@ -9,10 +9,22 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+  <!-- Added new fonts -->
+  <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/zidan">
+  <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/averta-blackitalic">
+  <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/futura-std-2">
   <title>Hedonist Heaven</title>
 </head>
 
 <body>
+
+  <!-- Import font information -->
+  <style>
+    @import url('http://fonts.cdnfonts.com/css/zidan');
+    @import url('http://fonts.cdnfonts.com/css/averta-blackitalic');
+    @import url('http://fonts.cdnfonts.com/css/futura-std-2');   
+  </style>
+
   <!--background video-->
 
   <video class="video-1" playsinline autoplay muted loop>
@@ -24,9 +36,10 @@
   <header>
     <!--Webpage Title-->
     <div class="container">
-      <div class="page-name"><i class="fa-solid fa-champagne-glasses"></i>HEDONIST HEAVEN<i
+      <!-- <div class="page-name"><i class="fa-solid fa-champagne-glasses"></i>HEDONIST HEAVEN<i
           class="fa-solid fa-champagne-glasses"></i></div>
-    </div><br>
+    </div><br> -->
+
     <!--Search Area-->
     <div class="container-1">
       <div class="search-area">
@@ -40,8 +53,9 @@
                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
+         <!--Changed search font size to medium-->
           <input type="search" id="default-search"
-            class="custom-input block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="custom-input block p-4 pl-10 w-full text-md text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder="Find Events" required>
           <button type="submit"
             class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -54,14 +68,15 @@
           <div class="flex items-center">
             <ul class="flex flex-row mt-0 mr-6 space-x-8 text-sm font-medium">
               <li>
-                <a href="index.html" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
+                <!--Removed inline styling from anchors and replaced with CSS -->
+                <a href="index.html" class="hover:underline" aria-current="page">Home</a>
               </li>
               <li>
-                <a href="./assets/html/sports.html" class="text-gray-900 dark:text-white hover:underline">Sporting
+                <a href="./assets/html/sports.html" class="hover:underline">Sporting
                   Events</a>
               </li>
               <li>
-                <a href="./assets/html/concerts.html" class="text-gray-900 dark:text-white hover:underline">Concerts</a>
+                <a href="./assets/html/concerts.html" class="hover:underline">Concerts</a>
               </li>
             </ul>
           </div>
@@ -79,8 +94,15 @@
     <section class="brewery-wrap">
       <div class="brew-searchArea">
         <!--Brewery Header/w Search Area-->
-        <h1 class="bg-gray-500 dark:bg-gray-700">Everythings Better With Beer!</h1>
-        <h2 class="bg-gray-500 dark:bg-gray-700">Find Your Brewery Here!</h2>
+        <!--Removed inline styling, made class in CSS-->
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
+        <h1 class="">.</h1>
         <div class="brewery-container">
 
           <select id="home-states"
@@ -252,17 +274,17 @@
     <div id="wid-div">
       <div class="home-widget">
         <h1 class="widget-text">Featured</h1>
-        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="#cc721e" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
       </div>
 
       <div class="home-widget">
         <h1 class="widget-text">Football</h1>
-        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="football" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="#cc721e" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="football" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
       </div>
 
       <div class="home-widget">
         <h1 class="widget-text">Music</h1>
-        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="music" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="#cc721e" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
+        <div w-type="event-discovery" w-tmapikey="taiF3boXdKk17IQ69YlGzA1O29aTWlnq" w-googleapikey="YOUR_GOOGLE_API_KEY" w-keyword="music" w-theme="grid" w-colorscheme="custom" w-width="100%" w-height="550" w-size="25" w-border="2" w-borderradius="4" w-postalcode="" w-radius="25" w-city="" w-period="week" w-layout="fullwidth" w-attractionid="" w-promoterid="" w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-titlelink="off" w-sorting="groupByName" w-id="id_uo2p9s" w-countrycode="US" w-source="" w-branding="Ticketmaster" w-descriptioncolor="#cc721e" w-backgroundcolor="#000000" w-bordercolor="" w-poweredbybackgroundcolor="#000000" w-latlong=""></div>
       </div>
     </div>
 

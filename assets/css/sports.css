@@ -13,26 +13,14 @@ video {
     z-index: -9999;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    width: 100vh;
-}
-
 header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: linear-gradient(rgba(255, 165, 0) 0%,
-            rgba(204, 33, 36, 0.6) 100%);
-    color: lime;
-    text-decoration: overline;
-    border: 3px solid lime;
-    height: 20vh;
-    font-family: rubik-dirt;
-    font-size: 30px;
-}
+    background-image: url(./css-backgrounds/My\ project-1-2.png);
+    background-size: cover;
+    height: 40vh;
+  }
 
 .container {
     display: flex;
@@ -49,55 +37,17 @@ header {
     background-color: transparent;
 }
 
-nav ul li{
+nav ul li {
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     font-weight: 900;
     font-size: 25px;
-    font-family: monospace;
-}
-
-nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 55%;
-}
-
-
-nav a {
-    text-decoration: none;
-    padding: 5px 10px;
-    color: rgb(139, 131, 131);
-    color:rgb(72, 72, 72);
-    margin-right: 10px;
-    background-image: linear-gradient(270deg, white 0%, black 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: bottom;
-    transition: all 0.25s ease-in;
-    font-size: 1.4rem;
-}
-
-nav a:hover {
-    background-size: 100% 100%;
-    color: white;
-}
-   
-
-.sports-results {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100vh;
-    width: 50vw;
-}
+    font-family: 'Zidan', sans-serif;
+    text-shadow: 2px 2px #F6FD01;
+    color: #FD01F6
+  }
 
 .search-area {
     width: 25%;
@@ -113,22 +63,14 @@ nav a:hover {
 
 .results-card {
     display: flex;
-    flex-direction: row;
     height: 20vh;
-    min-width: 100px;
+    min-width: 400px;
     align-items: flex-start;
     text-decoration: none;
     border: 3px solid greenyellow;
     background-color: rgb(72, 72, 72);
     margin: .5em;
     border-radius: .6em;
-}
-
-.sports-img {
-    height: 110px;
-    width: 60px;
-    background-size: cover;
-    align-self: flex-end;
 }
 
 .card-title {
@@ -145,32 +87,4 @@ nav a:hover {
 .website-link {
     align-self: flex-end;
     color: whitesmoke;
-}
-
-.card-title {
-    margin: 0 auto;
-    color: white;
-    font-size: 15px;
-    border-radius: .6em;
-}
-
-.venue-text {
-    margin: 0 auto;
-    color: white;
-    font-size: 15px;
-    border-radius: .6em;
-}
-
-.brews-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 20vw;
-    margin-left: 1em;
-}
-
-@media screen and (min-width: 1920px) {
-    .results-card {
-        min-width: 450px;
-    }
 }
