@@ -31,14 +31,14 @@ header {
     height: 40vh;
   }
 
-.container {
+ /* .container {
     display: flex;
     text-align: center;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: baseline;
     text-decoration: overline;
-}
+} */
 
 .container-1 {
     display: flex;
