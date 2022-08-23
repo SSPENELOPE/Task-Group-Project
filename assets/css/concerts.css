@@ -26,14 +26,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: stretch;
-    background-image: linear-gradient(rgba(255, 165, 0) 0%,
-            rgba(204, 33, 36, 0.6) 100%);
-    color: white;
-    height: 20vh;
-    font-family: rubik-dirt;
-    font-size: 30px;
-}
+    background-image: url(./css-backgrounds/My\ project-1-2.png);
+    background-size: cover;
+    height: 40vh;
+  }
 
 .container {
     display: flex;
@@ -54,14 +50,20 @@ header {
     margin-bottom: 1em;
 }
 
-nav ul li{
+nav ul li {
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     font-weight: 900;
-    font-size: 30px;
-    font-family: monospace;
+    font-size: 25px;
+    font-family: 'Zidan', sans-serif;
+    text-shadow: 2px 2px #F6FD01;
+    color: #FD01F6
+}
+
+  nav ul li :hover {
+    text-shadow: 5px 5px 10px #01F6FD;
 }
 
 .search-area {
@@ -99,7 +101,7 @@ nav ul li{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    height: 32vh;
+    height: 30vh;
     max-width: 400px;
     text-align: center;
     text-decoration: none;
@@ -148,6 +150,7 @@ nav ul li{
 .website-link {
     align-self: flex-end;
     text-decoration: underline;
+    background-color: black;
 }
 
 .next-prev {
@@ -170,11 +173,19 @@ nav ul li{
     margin-left: 1em;
 }
 
+.brew-searchArea {
+    
+    background: url(./css-backgrounds/My\ project-1-9.png);
+    background-size: cover;
+  }
+
 .brewery-wrapper h1,
 .brewery-wrapper h2{
     text-align: center;
-    color: white;
+    flex-wrap: wrap;
+    flex-direction: row;
     font-size: 25px;
+    color: #000000
 }
 
 .brewery-results {
@@ -213,7 +224,7 @@ nav ul li{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: normal;
+        justify-content: space-evenly;
         align-content: center;
         height: 100vh;
         margin: 10px;
@@ -221,22 +232,13 @@ nav ul li{
      
 
     .results-card {
-        min-width: 200px;
-        max-width: 200px;
-        min-height: 40vh;
+        min-width: 100px;
+        max-width: 100px;
     }
 
     .brewery-wrapper h1,
     .brewery-wrapper h2 {
         font-size: 15px;
-    }
-
-    .brewery-wrapper {
-        min-width: 300px;
-    }
-
-    .brew-img {
-        min-width: 300px;
     }
 
     .page-name {
