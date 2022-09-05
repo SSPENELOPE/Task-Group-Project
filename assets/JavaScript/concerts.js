@@ -6,6 +6,8 @@ var musicPrev = document.getElementById("music-prev");
 var musicNext = document.getElementById("music-next");
 var userSearch = document.getElementById("musicSearch-btn");
 var userInput = document.getElementById("music-input");
+const searchedList = document.querySelector(".searched");
+let storageArray = [];
 
 // Results Card Variables
 var musicResultsWrapper = document.querySelector(".music-results");
@@ -79,6 +81,8 @@ function searchByInputAndGenre(e) {
             var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&classificationName=music&keyword=" + musicInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
     }
 
+
+
     fetch(apiUrl)
         .then((function (response) {
             if (!response.ok) {
@@ -103,6 +107,63 @@ function searchByInputAndGenre(e) {
 
 // Display Concert Results Function
 function displayGenreResults(data) {
+    const searched = document.createElement("button");
+    searched.textContent = `${userInput.value}  ,`;
+    searched.classList = "searched-event";
+    if(!storageArray.includes(searched.textContent)) {
+        searchedList.appendChild(searched);
+    }
+    searched.addEventListener("click", function(event) {
+        userInput.value = "";
+        let target = event.target;
+        userInput.textContent = target.innerText;
+        var selectedValue = $("#small").val(); 
+        if (selectedValue == "Rap/Hiphop" && userInput) {
+            var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?&size=8&page=" + page + "&genreId=KnvZfZ7vAv1&keyword=" + userInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        } else if (selectedValue == "Alternative" && userInput) {
+            var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAvv&keyword=" + userInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        } else if (selectedValue == "Country" && userInput) {
+            var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAv6&keyword=" + userInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq"
+        } else if (selectedValue == "Alternative" && userInput) {
+            var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&genreId=KnvZfZ7vAeA&keyword=" + userInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        } else {
+                var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?size=8&page=" + page + "&classificationName=music&keyword=" + userInput + "&apikey=taiF3boXdKk17IQ69YlGzA1O29aTWlnq";
+        }
+    
+    
+    
+        fetch(apiUrl)
+            .then((function (response) {
+                if (!response.ok) {
+                    alert(response.statustext)
+                } else {
+                    return response.json().then(function (data) {
+                        console.log(data)
+                        if (!data._embedded) {
+                            swal({
+                                title: "Oops!",
+                                text: "Sorry no events found!",
+                                icon: "error",
+                                button: "Try Again?",
+                              });
+                        } else {
+                            displayGenreResults(data);
+                        }
+                    });
+                }
+            }))
+    });
+    let savedEvents = document.querySelectorAll(".searched-event");
+    savedEvents.forEach((events) => {
+        if(!storageArray.includes(events.textContent) && events.textContent) {
+            storageArray.push(events.textContent);
+        }
+    })
+    localStorage.setItem("savedEvents", JSON.stringify(storageArray));
+
+
+
+
     var events = data._embedded.events;
     console.log(events);
 
@@ -216,6 +277,16 @@ var brewPrev = function (e) {
     }
 }
 
+function loadSearched() {
+    storageArray = JSON.parse(localStorage.getItem("savedEvents")) || [];
+    storageArray.forEach((events) => {
+        const event = document.createElement("button");
+        event.classList = "searched-event";
+        event.textContent = events;
+        searchedList.appendChild(event);
+    })
+}
+
 /*      Event Listeners       */
 // Event Listener for genre select menu
 $("#small").on("change", function() {
@@ -235,3 +306,5 @@ userSearch.addEventListener("click", searchByInputAndGenre);
 // Event Listeners for Pagination buttons
 musicNext.addEventListener("click", nextPage);
 musicPrev.addEventListener("click", prevPage);
+
+loadSearched();

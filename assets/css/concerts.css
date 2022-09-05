@@ -73,6 +73,22 @@ nav ul li{
     margin-left: 10em;
 }
 
+.previously-searched {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.previously-searched h2 {
+    color: white;
+}
+
+.searched {
+    display: inline-block;
+    color: white;
+    margin-left: 2em;
+}
+
 
 /*     Music Genre Dropdown Results        */
 .music-results {
